@@ -4,7 +4,6 @@ import { Signale } from "signale";
 import * as dotenv from "dotenv";
 import helmet from "helmet";
 import cors from "cors"
-import {query} from "./database/mysql"
 //import { userRouter } from "./user/infraestructura/UserRouter";
 
 const app = express();
@@ -15,7 +14,7 @@ app.use(morgan("dev"));
 app.use(cors({ origin: "*" }));
 
 app.use(express.json());
-//app.use("/user", userRouter);
+app.use("/");
 
 const options = {
   secrets: ["([0-9]{4}-?)+"],

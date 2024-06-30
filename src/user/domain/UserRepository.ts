@@ -9,10 +9,11 @@ export interface userRepository {
     user: string,
     password: string,
     telefono: Number
-  ): Promise<string | null>;
+  ): Promise<User | null>;
   getUser(
     user: string,
     password: string
   ): Promise<{ token: string; user: string; id: string } | string>;
   putUser(user: string, password: string): Promise<Boolean>;
+  delete(id_user: string): Promise<string>;
 }

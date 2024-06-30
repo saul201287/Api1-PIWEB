@@ -9,4 +9,6 @@ export interface planRepository {
     detalles: string
   ): Promise<Plan | null>;
   getPlan(id: string): Promise<Plan | null>;
+  getPlans(): Promise<Plan | string>;
+  putPlan(id_user: string, id_plan:string): Promise<Plan | string>;
 }
