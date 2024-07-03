@@ -9,16 +9,18 @@ export class ValidateTokenController {
       if (typeof token === "string") {
         const access = await this.validate.run(token);
         if (typeof access !== "string") {
-          if (access == 201) {
-            res.status(access).json({
-              msg: "Token valido",
-            });
+          if (access == true) {
+            next();
           } else {
-            res.status(access).json({
+            res.status(401).json({
               msg: "Acceso denegado, token invalido",
             });
           }
         }
+      }else{
+        res.status(400).json({
+          msg: "No se encontro el token",
+        });
       }
     } catch (error) {
       console.error(error);
