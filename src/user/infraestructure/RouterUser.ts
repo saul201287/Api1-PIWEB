@@ -8,6 +8,7 @@ import {
   putUserPassController,
   getUserController,
   recoverPassController,
+  putUserPassRecoverController,
 } from "./DependenciesUser";
 
 export const userRouter = express.Router();
@@ -104,3 +105,14 @@ userRouter.put(
       });
   }
 );
+
+userRouter.put("/passrecover", (req, res) => {
+  putUserPassRecoverController
+    .run(req, res)
+    .then((user) => {
+      return user;
+    })
+    .catch((err) => {
+      res.status(500).send({ error: err.message, msg: "Error en el servidor" });
+    });
+});

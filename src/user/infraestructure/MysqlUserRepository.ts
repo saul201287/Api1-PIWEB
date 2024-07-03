@@ -105,6 +105,26 @@ export class MysqlUserRepository implements userRepository {
       return false;
     }
   }
+  async putUserPassRecover(
+    email: string,
+    newpass: string
+  ): Promise<string | boolean> {
+    const sql = "UPDATE users SET password = ? where email= ? ";
+    const params = [newpass, email];
+
+    try {
+      const [result]: any = await query(sql, params);
+      const data: any = Object.values(JSON.parse(JSON.stringify(result)));
+      if (data[1] == 1) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      console.error(error);
+      return "error: " + error;
+    }
+  }
   async deleteUser(id_user: string): Promise<string> {
     return "";
   }
