@@ -23,13 +23,14 @@ export class MysqlUserRepository implements userRepository {
       edad,
       user,
       password,
-      telefono,
+      telefono.toString(),
     ];
 
     try {
       const [result]: any = await query(sql, params);
       const userNew: any = new User(
         id,
+        0,
         nombre,
         apellidos,
         email,
@@ -45,20 +46,18 @@ export class MysqlUserRepository implements userRepository {
     }
   }
   async getUser(user: string, password: string): Promise<boolean | User[]> {
-    console.log(user);
-
     const sql = "SELECT * FROM users where user = ? ";
     const params: any = [user];
     try {
       const [result]: any = await query(sql, params);
       const dataUsers = Object.values(JSON.parse(JSON.stringify(result)));
-      console.log(dataUsers);
 
       if (dataUsers.length > 0) {
         const users: User[] = dataUsers.map(
           (user: any) =>
             new User(
               user.idUsers,
+              user.id_plan,
               user.name,
               user.lastname,
               user.email,
@@ -98,7 +97,6 @@ export class MysqlUserRepository implements userRepository {
     try {
       const [result]: any = await query(sql, params);
       const data = Object.values(JSON.parse(JSON.stringify(result)));
-      console.log(data);
       return true;
     } catch (error) {
       console.error(error);

@@ -43,6 +43,7 @@ export class ValidatorValues {
           (user: any) =>
             new User(
               user.id,
+              user.id_plan,
               user.nombre,
               user.apellidos,
               user.email,
