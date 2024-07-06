@@ -1,4 +1,4 @@
-export interface IPaymentsServices {
+export interface PaymentsRepository {
   payPlan(
     targeta: string,
     cvv: number,
