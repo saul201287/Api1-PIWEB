@@ -1,13 +1,8 @@
+import { Payments } from "./Payments";
+
 export interface PaymentsRepository {
-  payPlan(
-    targeta: string,
-    cvv: number,
-    fecha: Date,
-    email: string,
-    metodoPago: string,
-    fechaExp: Date,
-    monto: number,
-    paquete: number
-  ): Promise<JSON>;
-  
+  payPlan(payment: Payments): Promise<Payments | null>;
+  getPayments(user: string): Promise<Payments[] | null>;
+  getPayment(user: string): Promise<Payments[] | null>;
+  findUser(email: string): Promise<{iduser:string,idplan:number}| null>;
 }

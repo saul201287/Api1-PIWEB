@@ -6,6 +6,7 @@ import helmet from "helmet";
 import cors from "cors"
 import { userRouter } from "./user/infraestructure/RouterUser";
 import { planRouter } from "./planes/infraestructure/RoouterPlans";
+import { paymentsRouter } from "./payments/infraestructure/PaymentsRouter";
 
 dotenv.config();
 const app = express();
@@ -18,6 +19,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use("/user", userRouter);
 app.use("/plan", planRouter)
+app.use("/payments",paymentsRouter)
 
 const options = {
   secrets: ["([0-9]{4}-?)+"],
