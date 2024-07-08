@@ -40,7 +40,8 @@ export class servicesEmail implements IServicesEmail {
                 <p><b>Si desea adquirir uno de nuestros productos por favor póngase en contacto con nuestro 
                 agente más cercano al siguiente número: 9671941293</b></p>
                 <p><b>O a la siguiente dirección de correo: jrmich3@hotmail.com</b></p> 
-                <a href="https://ibb.co/T0RsNXX"><img src="https://i.ibb.co/VCDskyy/Captura-de-pantalla-2024-04-19-103202.png" alt="Paquetes PowerWatch" border="0"></a>
+                <p><b>PAQUETES Y COSTOS:</b></p>
+                <a href="https://ibb.co/tqcJn3x"><img src="https://i.ibb.co/9b2rBGV/imagen-2024-07-07-204351307.png"></a>
             </div>`,
         });
         if (info) {

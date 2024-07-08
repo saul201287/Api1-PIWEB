@@ -12,12 +12,12 @@ export class CreateUserController {
       if ((await validationes.validationesUsername(data.user)) > 0) {
         res.status(409).send({
           status: "error",
-          data: "El nombre de usuario ya se encuntra registrado",
+          data: "El nombre de usuario ya se encuentra registrado",
         });
       } else if ((await validationes.validationesEmail(data.email)) > 0) {
         res.status(409).send({
           status: "error",
-          data: "El correo ingresado ya se encuntra registrado",
+          data: "El correo ingresado ya se encuentra registrado",
         });
       } else {
         const user: any = await this.createUserUseCase.run(
