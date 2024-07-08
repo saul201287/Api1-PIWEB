@@ -81,7 +81,7 @@ export class NodeMailerServices implements IServicesEmailPayments {
         html: `
           <div style="max-width: 600px; margin: auto; font-family: Arial, sans-serif; border: 1px solid #ddd; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
             <div style="text-align: center; margin-bottom: 20px;">
-              <img src="https://i.ibb.co/VCDskyy/Captura-de-pantalla-2024-04-19-103202.png" alt="PowerWatch Logo" style="width: 150px;"/>
+              <img src="https://i.ibb.co/9b2rBGV/imagen-2024-07-07-204351307.png" alt="PowerWatch Logo" style="width: 150px;"/>
             </div>
             <h2 style="color: #333; text-align: center;">Comprobante de Pago</h2>
             <p style="text-align: center;">Gracias por su compra. A continuación encontrará los detalles de su transacción en el PDF adjunto.</p>

@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { GetPaymentsUseCase } from "../../application/GetPaymetsUseCase";
+import { GetPaymentUseCase } from "../../application/GetPaymentUseCase";
 
-export class GetPaymentsController {
-  constructor(readonly getPayment: GetPaymentsUseCase) {}
+export class GetPaymentController {
+  constructor(readonly getPayment: GetPaymentUseCase) {}
   async run(req: Request, res: Response) {
     const data = req.body;
     try {
-      const payments = await this.getPayment.run(data.user);
+      const payments = await this.getPayment.run(data.user, data.id_pago);
       if (payments != null) {
         const newToken = res.locals.newToken;
         if (newToken) {
