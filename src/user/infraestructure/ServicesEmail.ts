@@ -41,8 +41,8 @@ export class servicesEmail implements IServicesEmail {
                 agente más cercano al siguiente número: 9671941293</b></p>
                 <p><b>O a la siguiente dirección de correo: jrmich3@hotmail.com</b></p> 
                 <p><b>PAQUETES Y COSTOS:</b></p>
-                <a href="https://ibb.co/tqcJn3x"><img src="https://i.ibb.co/9b2rBGV/imagen-2024-07-07-204351307.png"></a>
-            </div>`,
+                <a href="https://ibb.co/zrmGfLF"><img src="https://i.ibb.co/t4H8CNz/Whats-App-Image-2024-07-08-at-8-57-02-AM.jpg" ></a>            
+                </div>`,
         });
         if (info) {
           return true;
