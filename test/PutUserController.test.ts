@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { PutUserPassUseCase } from "../../../application/PutUserPassUseCase"; 
-import { PutUserPassController } from "../PutUserPassController"; 
-import { MysqlUserRepository } from "../../MysqlUserRepository";
-import { EncryptServices } from "../../helpers/ServicesEncript";
+import { PutUserPassUseCase } from "../src/user/application/PutUserPassUseCase"; 
+import { PutUserPassController } from "../src/user/infraestructure/controllers/PutUserPassController"; 
+import { MysqlUserRepository } from "../src/user/infraestructure/MysqlUserRepository";
+import { EncryptServices } from "../src/user/infraestructure/helpers/ServicesEncript";
 
-jest.mock("../../application/PutUserPassUseCase");
+jest.mock("../src/user/application/PutUserPassUseCase");
 
 describe("PutUserPassController", () => {
   let putUserPassUseCase: PutUserPassUseCase;

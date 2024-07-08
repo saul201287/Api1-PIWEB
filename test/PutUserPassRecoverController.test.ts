@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { PutUserPassRecoverUseCase } from "../../../application/PutUserPassRecoverUseCase";
-import { PutUserPassRecoverController } from "../PutUserPassRecoverController";  
-import { MysqlUserRepository } from "../../MysqlUserRepository";
-import { EncryptServices } from "../../helpers/ServicesEncript";
+import { PutUserPassRecoverUseCase } from "../src/user/application/PutUserPassRecoverUseCase";
+import { PutUserPassRecoverController } from "../src/user/infraestructure/controllers/PutUserPassRecoverController";  
+import { MysqlUserRepository } from "../src/user/infraestructure/MysqlUserRepository";
+import { EncryptServices } from "../src/user/infraestructure/helpers/ServicesEncript";
 
-jest.mock("../../application/PutUserPassRecoverUseCase");
+jest.mock("../src/user/application/PutUserPassRecoverUseCase");
 
 describe("PutUserPassRecoverController", () => {
   let putUserPassRecoverUseCase: PutUserPassRecoverUseCase;

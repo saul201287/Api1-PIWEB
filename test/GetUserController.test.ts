@@ -1,10 +1,10 @@
 import { NextFunction, Request, Response } from "express";
-import { GetUserUseCase } from "../../../application/GeTUserUseCase";
-import { GetUserControll } from "../GetUserController";
-import { MysqlUserRepository } from "../../MysqlUserRepository";
-import { EncryptServices } from "../../helpers/ServicesEncript";
+import { GetUserUseCase } from "../src/user/application/GeTUserUseCase";
+import { GetUserControll } from "../src/user/infraestructure/controllers/GetUserController";
+import { MysqlUserRepository } from "../src/user/infraestructure/MysqlUserRepository";
+import { EncryptServices } from "../src/user/infraestructure/helpers/ServicesEncript";
 
-jest.mock("../../application/GetUserUseCase");
+jest.mock("../src/user/application/GeTUserUseCase");
 
 describe("GetUserControll", () => {
   let getUserUseCase: GetUserUseCase;

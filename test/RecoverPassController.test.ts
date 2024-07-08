@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { SendEmailPassRecover } from "../../../application/services/SendEmailPassRecover"; 
-import { RecoverPassController } from "../RecoverPassController";
-import { MysqlUserRepository } from "../../MysqlUserRepository";
-import { servicesEmail } from "../../ServicesEmail";
+import { SendEmailPassRecover } from "../src/user/application/services/SendEmailPassRecover"; 
+import { RecoverPassController } from "../src/user/infraestructure/controllers/RecoverPassController";
+import { MysqlUserRepository } from "../src/user/infraestructure/MysqlUserRepository";
+import { servicesEmail } from "../src/user/infraestructure/ServicesEmail";
 
-jest.mock("../../application/services/SendEmailPassRecover");
+jest.mock("../src/user/application/services/SendEmailPassRecover");
 
 describe("RecoverPassController", () => {
   let sendEmailPassRecover: SendEmailPassRecover;
