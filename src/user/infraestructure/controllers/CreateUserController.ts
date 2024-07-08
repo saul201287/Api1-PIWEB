@@ -45,7 +45,7 @@ export class CreateUserController {
           res.locals.user = data;
           next();
         } else
-          res.status(204).send({
+          res.status(404).send({
             status: "error",
             data: "NO fue posible agregar el registro",
           });

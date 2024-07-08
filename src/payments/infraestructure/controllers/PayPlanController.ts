@@ -20,10 +20,18 @@ export class PayPlanController {
           messages: "No se pudo efectuar el pago",
         });
       } else if (typeof pay != "string") {
-        res.status(201).json({
-          messages: "Pago efectuado con exito",
-          data: pay,
-        });
+        const newToken = res.locals.newToken;
+        if (newToken) {
+          res.header("nuevo-token", newToken).status(201).json({
+            messages: "Pago efectuado con exito",
+            data: pay,
+          });
+        } else {
+          res.status(201).json({
+            messages: "Pago efectuado con exito",
+            data: pay,
+          });
+        }
       } else {
         res.status(404).json({
           messages: "Hubo un problema en los servicios de pago intente despues",

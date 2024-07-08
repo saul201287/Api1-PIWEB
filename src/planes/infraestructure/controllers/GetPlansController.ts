@@ -7,9 +7,16 @@ export class GetPlansController {
     try {
       const plans = await this.getPlans.run();
       if (typeof plans != "string") {
-        res.status(200).json({
-          data: plans,
-        });
+        const newToken = res.locals.newToken;
+        if (newToken) {
+          res.header("nuevo-token", newToken).status(200).json({
+            data: plans,
+          });
+        } else {
+          res.status(200).json({
+            data: plans,
+          });
+        }
       } else {
         res.status(404).json({
           messages: plans,

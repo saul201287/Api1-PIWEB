@@ -16,6 +16,9 @@ export class ValidateTokenController {
               msg: "Acceso denegado, token invalido",
             });
           }
+        }else{
+          res.locals.newToken = access;
+          next();
         }
       }else{
         res.status(400).json({

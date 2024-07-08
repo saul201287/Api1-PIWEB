@@ -1,4 +1,4 @@
-import { verify, sign } from "jsonwebtoken";
+import { verify, sign, TokenExpiredError } from "jsonwebtoken";
 import { query } from "../../database/mysql";
 import { AuthRepository } from "../domain/AuthRepository";
 
@@ -17,7 +17,21 @@ export class AuthServices implements AuthRepository {
   async validateToken(token: string): Promise<boolean | string> {
     try {
       let secret: any = process.env.SECRET_KEY_TOKEN;
-      let access: any = verify(token, secret);
+      let access: any;
+
+      try {
+        access = verify(token, secret);
+      } catch (error) {
+        if (error instanceof TokenExpiredError) {
+          const newToken = await this.createToken(
+            (verify(token, secret, { ignoreExpiration: true }) as any).id_user
+          );
+          return newToken;
+        } else {
+          throw error;
+        }
+      }
+
       let userFind = await query(
         "SELECT COUNT(*) AS count FROM users WHERE idUsers = ?",
         [access.id_user]

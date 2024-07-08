@@ -9,9 +9,17 @@ export class AssignPlanController {
       const result = await this.assign.run(data.email, data.plan);
       if (typeof result == "boolean") {
         if (result) {
-          res.status(201).json({
-            messages: "Plan asignado correctamente",
-          });
+          const newToken = res.locals.newToken; 
+          if (newToken) {
+            res.header("nuevo-token", newToken).status(201).json({
+              messages: "Plan asignado correctamente",
+            });
+          }else{
+            res.status(201).json({
+              messages: "Plan asignado correctamente",
+            });
+          }
+         
         } else {
           res.status(404).json({
             messages: "Usuario no encontrado",

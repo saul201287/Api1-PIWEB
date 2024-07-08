@@ -1,26 +1,29 @@
 import { Request, Response } from "express";
-import { GetPlanUserUseCase } from "../../application/GetPlanUserUseCase";
+import { GetPaymentsUseCase } from "../../application/GetPaymetsUseCase";
 
-export class GetPlanUserController {
-  constructor(readonly getPlan: GetPlanUserUseCase) {}
+export class GetPaymentsController {
+  constructor(readonly getPayment: GetPaymentsUseCase) {}
   async run(req: Request, res: Response) {
     const data = req.body;
     try {
-      const plan = await this.getPlan.run(data.user);
-      if (typeof plan != "string") {
+      const payments = await this.getPayment.run(data.user);
+      if (payments != null) {
         const newToken = res.locals.newToken;
         if (newToken) {
           res.header("nuevo-token", newToken).status(200).json({
-            data: plan,
+            messages: "elemntos encontrados",
+            data: payments,
           });
         } else {
           res.status(200).json({
-            data: plan,
+            messages: "elemntos encontrados",
+            data: payments,
           });
         }
       } else {
         res.status(404).json({
-          messages: plan,
+          messages:
+            "El usuario o datos relacionado a este usuario no se encontron",
         });
       }
     } catch (error) {

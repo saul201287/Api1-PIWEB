@@ -12,9 +12,16 @@ export class PutUserPassController {
         data.password2
       );
       if (isPassTrue) {
-        res.status(201).json({
-          messages: "Contraseña modificada",
-        });
+        const newToken = res.locals.newToken;
+        if (newToken) {
+          res.header("nuevo-token", newToken).status(201).json({
+            messages: "Contraseña modificada",
+          });
+        } else {
+          res.status(201).json({
+            messages: "Contraseña modificada",
+          });
+        }
       } else {
         res.status(400).json({
           error: "hubo un error de parte del cliente",

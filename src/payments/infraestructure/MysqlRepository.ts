@@ -54,7 +54,34 @@ export class MysqlRepository implements PaymentsRepository {
   }
 
   async getPayments(user: unknown): Promise<Payments[] | null> {
-    return null;
+    const sql = `SELECT pagos.id,pagos.importe,pagos.fecha,pagos.descripcion, planes.tipo AS nombre_plan,users.lastname, users.name AS usuario 
+    FROM pagos JOIN users ON pagos.id_user = users.idUsers JOIN planes ON pagos.id_plan = planes.idplan
+     WHERE users.user = ?`;
+    const params = [user];
+    try {
+      const [result]: any = await query(sql, params);
+      const data: any = Object.values(JSON.parse(JSON.stringify(result)));
+      if (data.length > 0) {
+        const payments: Payments[] = data.map(
+          (payment: any) =>
+            new Payments(
+              payment.id,
+              payment.nombre_plan + " " + payment.lastname,
+              payment.usuario,
+              payment.importe,
+              payment.fecha,
+              payment.descripcion
+            )
+        );
+        console.log(payments);
+        return payments;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
   }
   async getPayment(user: string): Promise<Payments[] | null> {
     return null;
