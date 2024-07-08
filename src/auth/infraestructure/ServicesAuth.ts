@@ -28,7 +28,8 @@ export class AuthServices implements AuthRepository {
           );
           return newToken;
         } else {
-          throw error;
+          console.error(error);
+          return false;
         }
       }
 
