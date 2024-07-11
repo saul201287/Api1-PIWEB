@@ -35,7 +35,7 @@ planRouter.put(
       });
   }
 );
-planRouter.get(
+planRouter.post(
   "/getPlans",
   (req, res, next) => {
     validateTokenController
@@ -62,7 +62,7 @@ planRouter.get(
       });
   }
 );
-planRouter.get(
+planRouter.post(
   "/getPlanUser",
   (req, res, next) => {
     validateTokenController

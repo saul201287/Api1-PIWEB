@@ -50,7 +50,7 @@ userRouter.post("/recoverpass", (req, res) => {
       res.status(500).send({ error: err.message, msg: "Error en el servidor" });
     });
 });
-userRouter.get(
+userRouter.post(
   "/login",
   (req, res, next) => {
     getUserController

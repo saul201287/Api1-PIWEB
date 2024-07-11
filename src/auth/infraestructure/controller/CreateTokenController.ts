@@ -6,8 +6,9 @@ export class CreateTokenControll {
   async run(req: Request, res: Response) {
     try {
       const token = await this.createToken.run(res.locals.user.id);
-      res.status(201).header("token", token).json({
+      res.status(200).header("x-token-access", token).json({
         data: res.locals.user,
+        token: token
       });
     } catch (error) {
       console.error(error);

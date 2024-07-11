@@ -34,7 +34,7 @@ paymentsRouter.post(
       });
   }
 );
-paymentsRouter.get(
+paymentsRouter.post(
   "/payments",
   (req, res, next) => {
     validateTokenController
@@ -61,7 +61,7 @@ paymentsRouter.get(
       });
   }
 );
-paymentsRouter.get(
+paymentsRouter.post(
   "/payment",
   (req, res, next) => {
     validateTokenController
