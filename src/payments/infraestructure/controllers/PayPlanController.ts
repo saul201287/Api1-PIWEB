@@ -33,7 +33,7 @@ export class PayPlanController {
           });
         }
       } else {
-        res.status(404).json({
+        res.status(409).json({
           messages: "Hubo un problema en los servicios de pago intente despues",
         });
       }

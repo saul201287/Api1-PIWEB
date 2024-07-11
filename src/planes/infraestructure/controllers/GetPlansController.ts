@@ -18,7 +18,7 @@ export class GetPlansController {
           });
         }
       } else {
-        res.status(404).json({
+        res.status(401).json({
           messages: plans,
         });
       }

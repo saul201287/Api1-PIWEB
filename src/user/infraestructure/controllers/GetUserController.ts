@@ -13,7 +13,7 @@ export class GetUserControll {
         res.locals.user = userN;
         next();
       } else {
-        res.status(404).json({
+        res.status(401).json({
           error: "Credenciales invalidas",
         });
       }

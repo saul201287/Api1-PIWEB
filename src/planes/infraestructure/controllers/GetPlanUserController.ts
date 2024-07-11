@@ -19,7 +19,7 @@ export class GetPlanUserController {
           });
         }
       } else {
-        res.status(404).json({
+        res.status(401).json({
           messages: plan,
         });
       }

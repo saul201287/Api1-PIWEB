@@ -21,7 +21,7 @@ export class GetPaymentController {
           });
         }
       } else {
-        res.status(404).json({
+        res.status(406).json({
           messages:
             "El usuario o datos relacionado a este no se encontron",
         });

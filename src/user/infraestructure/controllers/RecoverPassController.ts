@@ -13,7 +13,7 @@ export class RecoverPassController {
             message: "Email enviado",
           });
         } else {
-          res.status(404).json({
+          res.status(406).json({
             messages: "Email no registrado",
           });
         }

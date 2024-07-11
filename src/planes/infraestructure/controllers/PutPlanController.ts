@@ -20,12 +20,12 @@ export class PutPlanController {
             });
           }
         } else {
-          res.status(404).json({
+          res.status(406).json({
             messages: "Usuario no encontrado",
           });
         }
       } else {
-        res.status(401).json({
+        res.status(409).json({
           messages: "Error en el servicio",
         });
       }

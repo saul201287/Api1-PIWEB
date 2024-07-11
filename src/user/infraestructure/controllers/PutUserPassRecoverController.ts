@@ -14,7 +14,7 @@ export class PutUserPassRecoverController {
             messages: "Contraseña editada correctamente",
           });
         } else {
-          res.status(409).json({
+          res.status(406).json({
             menssages: "El correo no esta registrado",
           });
         }
