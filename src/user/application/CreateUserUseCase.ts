@@ -37,8 +37,11 @@ export class CreateUserUseCase {
       );
       if (User) {
         await this.serviceEmail.run(email, nombre)
+        return User;
+      }else{
+        return null
       }
-      return User;
+      
     } catch (error) {
       console.log(error);
       return null;

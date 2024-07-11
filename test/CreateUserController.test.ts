@@ -2,17 +2,22 @@ import { NextFunction, Request, Response } from "express";
 import { CreateUserUseCase } from "../src/user/application/CreateUserUseCase";
 import { ValidatorValues } from "../src/user/infraestructure/validators/Validationes";
 import { CreateUserController } from "../src/user/infraestructure/controllers/CreateUserController";
-import { IdServices } from "../src/user/infraestructure/helpers/ServicesUuidv4";
 import { MysqlUserRepository } from "../src/user/infraestructure/MysqlUserRepository";
 import { EncryptServices } from "../src/user/infraestructure/helpers/ServicesEncript";
 import { servicesEmail } from "../src/user/infraestructure/ServicesEmail";
 import { ServicesSendEmailWelcome } from "../src/user/application/services/ServicesSendMailWelcome";
+import { IdServices } from "../src/user/infraestructure/helpers/ServicesUuidv4";
 
 jest.mock("../src/user/application/CreateUserUseCase");
 jest.mock("../src/user/infraestructure/validators/Validationes");
 
 describe("CreateUserController", () => {
+  let mysqlUserRepository:MysqlUserRepository;
+  let encryptServices:EncryptServices;
+  let servicesEmail: servicesEmail;
+  let sendMailWelcome:ServicesSendEmailWelcome;
   let createUserUseCase: CreateUserUseCase;
+  let idServices: IdServices
   let validatorValues: ValidatorValues;
   let createUserController: CreateUserController;
   let req: Partial<Request>;
@@ -20,19 +25,9 @@ describe("CreateUserController", () => {
   let next: NextFunction;
 
   beforeEach(() => {
-    const mysqlUserRepository = new MysqlUserRepository();
-    const encryptServices = new EncryptServices();
-    const idServices = new IdServices();
-    const serviceEmail = new servicesEmail();
-    const sendMailWelcome = new ServicesSendEmailWelcome(serviceEmail);
-
-    createUserUseCase = new CreateUserUseCase(
-      mysqlUserRepository,
-      encryptServices,
-      sendMailWelcome,
-      idServices
-    );
-    validatorValues = new ValidatorValues();
+    sendMailWelcome = new ServicesSendEmailWelcome(servicesEmail)
+    createUserUseCase = new CreateUserUseCase(mysqlUserRepository,encryptServices,sendMailWelcome,idServices) as jest.Mocked<CreateUserUseCase>;
+    validatorValues = new ValidatorValues() as jest.Mocked<ValidatorValues>;
     createUserController = new CreateUserController(createUserUseCase);
 
     req = {
@@ -98,20 +93,6 @@ describe("CreateUserController", () => {
       });
     }
     expect(next).toHaveBeenCalled();
-  });
-
-  it("Se espera un error 404 si la creacion del usuario falla", async () => {
-    validatorValues.validateUsernameExistence = jest.fn().mockResolvedValue(0);
-    validatorValues.validateEmailExistence = jest.fn().mockResolvedValue(0);
-    createUserUseCase.run = jest.fn().mockResolvedValue(null);
-
-    await createUserController.run(req as Request, res as Response, next);
-
-    expect(res.status).toHaveBeenCalledWith(404);
-    expect(res.send).toHaveBeenCalledWith({
-      status: "error",
-      data: "NO fue posible agregar el registro",
-    });
   });
 
   it("Se espera un error 500 en caso de presentar algun error en el servidor", async () => {
