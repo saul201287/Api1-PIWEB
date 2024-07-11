@@ -6,7 +6,7 @@ export class GetPaymentsController {
   async run(req: Request, res: Response) {
     const data = req.body;
     try {
-      const payments = await this.getPayment.run(data.user);
+      const payments = await this.getPayment.run(data.email);
       if (payments != null) {
         const newToken = res.locals.newToken;
         if (newToken) {

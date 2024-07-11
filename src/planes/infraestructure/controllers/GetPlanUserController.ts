@@ -6,7 +6,7 @@ export class GetPlanUserController {
   async run(req: Request, res: Response) {
     const data = req.body;
     try {
-      const plan = await this.getPlan.run(data.user);
+      const plan = await this.getPlan.run(data.email);
       if (typeof plan != "string") {
         const newToken = res.locals.newToken;
         if (newToken) {

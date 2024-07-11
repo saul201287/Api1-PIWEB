@@ -3,10 +3,10 @@ import { PaymentsRepository } from "../domain/PaymentsRepository";
 
 export class GetPaymentUseCase {
   constructor(readonly payments: PaymentsRepository) {}
-  async run(user: string, id_pago:string): Promise<Payments[] | null> {
+  async run(email: string, id_pago:string): Promise<Payments[] | null> {
     try {
       const paymenstT: Payments[] | null = await this.payments.getPayment(
-        user,id_pago
+        email,id_pago
       );
       if (paymenstT != null) {
         return paymenstT;

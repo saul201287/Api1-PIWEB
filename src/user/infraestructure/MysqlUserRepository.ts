@@ -2,28 +2,34 @@ import { query } from "../../database/mysql";
 import { User } from "../domain/User";
 import { userRepository } from "../domain/UserRepository";
 
+function addOneMonth(date: Date): Date {
+  const newDate = new Date(date);
+  newDate.setMonth(newDate.getMonth() + 1);
+  return newDate;
+}
+
 export class MysqlUserRepository implements userRepository {
   async createUser(
     id: string,
     nombre: string,
     apellidos: string,
     email: string,
-    edad: number,
-    user: string,
     password: string,
-    telefono: number
+    telefono: number,
+    fechaPlan: Date
   ): Promise<User | null> {
+    const currentDate = new Date();
+    fechaPlan = addOneMonth(currentDate);
     const sql =
-      "INSERT INTO users (idUsers,name,lastname,email,edad,user,password, telefono) VALUES (?,?,?,?,?,?,?,?)";
+      "INSERT INTO users (idUsers,name,lastname,email,password, telefono, fechaPlan) VALUES (?,?,?,?,?,?,?)";
     const params: any[] = [
       id,
       nombre,
       apellidos,
       email,
-      edad,
-      user,
       password,
       telefono.toString(),
+      fechaPlan,
     ];
 
     try {
@@ -34,10 +40,9 @@ export class MysqlUserRepository implements userRepository {
         nombre,
         apellidos,
         email,
-        user,
         password,
-        edad,
-        telefono
+        telefono,
+        fechaPlan
       );
       return userNew;
     } catch (error) {
@@ -45,14 +50,15 @@ export class MysqlUserRepository implements userRepository {
       return null;
     }
   }
-  async getUser(user: string, password: string): Promise<boolean | User[]> {
-    const sql = "SELECT * FROM users where user = ? ";
-    const params: any = [user];
+  async getUser(email: string, password: string): Promise<boolean | User[]> {
+    const sql = "SELECT * FROM users where email = ? ";
+    const params: any = [email];
     try {
       const [result]: any = await query(sql, params);
-      const dataUsers = Object.values(JSON.parse(JSON.stringify(result)));
+      const dataUsers: any = Object.values(JSON.parse(JSON.stringify(result)));
 
       if (dataUsers.length > 0) {
+        
         const users: User[] = dataUsers.map(
           (user: any) =>
             new User(
@@ -61,10 +67,9 @@ export class MysqlUserRepository implements userRepository {
               user.name,
               user.lastname,
               user.email,
-              user.user,
               user.password,
-              user.edad,
-              user.telefono
+              user.telefono,
+              user.fechaPlan
             )
         );
         return users;
@@ -91,9 +96,9 @@ export class MysqlUserRepository implements userRepository {
       return "error: " + error;
     }
   }
-  async putUserPass(user: string, password: string): Promise<Boolean> {
-    const params: any = [password, user];
-    const sql = "UPDATE users SET password = ? where user= ? ";
+  async putUserPass(email: string, password: string): Promise<Boolean> {
+    const params: any = [password, email];
+    const sql = "UPDATE users SET password = ? where email= ? ";
     try {
       const [result]: any = await query(sql, params);
       const data = Object.values(JSON.parse(JSON.stringify(result)));

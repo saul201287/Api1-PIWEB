@@ -5,9 +5,8 @@ export class User{
       readonly nombre: string,
       readonly apellidos: string,
       readonly email: string,
-      readonly username: string,
       readonly password: string,
-      readonly edad: Number,
-      readonly telefono: Number
+      readonly telefono: Number,
+      readonly plan: Date,
     ) {}
   }

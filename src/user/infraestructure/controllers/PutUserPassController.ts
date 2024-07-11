@@ -7,7 +7,7 @@ export class PutUserPassController {
     const data = req.body;
     try {
       const isPassTrue = await this.putUserPassUseCase.run(
-        data.user,
+        data.email,
         data.password,
         data.password2
       );

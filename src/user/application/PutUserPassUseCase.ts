@@ -6,9 +6,9 @@ export class PutUserPassUseCase {
     readonly userRepository: userRepository,
     readonly encrypt: IEncrypt
   ) {}
-  async run(user: string, password: string, password2:string): Promise<boolean> {
+  async run(email: string, password: string, password2:string): Promise<boolean> {
     try {
-      const userIsTrue = await this.userRepository.getUser(user, password);
+      const userIsTrue = await this.userRepository.getUser(email, password);
       if (typeof userIsTrue != "boolean") {  
         const isPassModific = await this.encrypt.compareTo(
           password,
@@ -18,7 +18,7 @@ export class PutUserPassUseCase {
         
         if (isPassModific) {
           const newPass = await this.encrypt.encodePassword(password2);
-          const userPass = await this.userRepository.putUserPass(user, newPass);
+          const userPass = await this.userRepository.putUserPass(email, newPass);
           if (userPass) {
             return true;
           } else {

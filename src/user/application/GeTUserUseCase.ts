@@ -8,16 +8,17 @@ export class GetUserUseCase {
     private readonly encrypt: IEncrypt
   ) {}
 
-  async run(user: string, password: string): Promise<User | boolean> {
+  async run(email: string, password: string): Promise<User | boolean> {
     try {
-      const userN: User[] | boolean = await this.userRepository.getUser(
-        user,
+      const userN: any = await this.userRepository.getUser(
+        email,
         password
       );
 
       if (typeof userN === "boolean") {
         return false;
       }
+      
       const isPasswordCorrect = await this.encrypt.compareTo(
         password,
         userN[0].password

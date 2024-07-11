@@ -9,12 +9,8 @@ export class CreateUserController {
     const data = req.body;
     const validationes = new ValidatorValues();
     try {
-      if ((await validationes.validateUsernameExistence(data.user)) > 0) {
-        res.status(409).send({
-          status: "error",
-          data: "El nombre de usuario ya se encuentra registrado",
-        });
-      } else if ((await validationes.validateEmailExistence(data.email)) > 0) {
+      
+     if ((await validationes.validateEmailExistence(data.email)) > 0) {
         res.status(409).send({
           status: "error",
           data: "El correo ingresado ya se encuentra registrado",
@@ -25,10 +21,9 @@ export class CreateUserController {
           data.nombre,
           data.apellidos,
           data.email,
-          data.edad,
-          data.user,
           data.password,
-          data.telefono
+          data.telefono,
+          data.fechaPlan
         );
 
         if (user) {
@@ -37,10 +32,9 @@ export class CreateUserController {
             nombre: user?.nombre,
             apellidos: user?.apellidos,
             email: user?.email,
-            edad: user?.edad,
-            user: user?.username,
             password: user?.password,
             telefono: user?.telefono,
+            fechaPlan: user?.fechaPlan
           };
           res.locals.user = data;
           next();

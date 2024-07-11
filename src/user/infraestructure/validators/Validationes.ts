@@ -2,17 +2,15 @@ import { compare } from "bcryptjs";
 import { User } from "../../domain/User";
 import { query } from "../../../database/mysql";
 
-interface UserCount {
-  count: number;
-}
+
 
 export class ValidatorValues {
   private async getUserCount(sql: string, param: string): Promise<number> {
     try {
       const res = await query(sql, [param]);
-      const result: UserCount[] = JSON.parse(JSON.stringify(res));
-      if (result.length > 0) {
-        return result[0].count;
+      const result: any = JSON.parse(JSON.stringify(res));
+      if (result[0][0].count > 0) {
+        return result[0][0].count;
       }
       return 0;
     } catch (error) {

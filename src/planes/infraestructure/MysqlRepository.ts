@@ -49,10 +49,10 @@ export class MysqlRepository implements PlanRepository {
       return "error: " + error;
     }
   }
-  async getPlanUser(user: string): Promise<Plan[] | string> {
+  async getPlanUser(email: string): Promise<Plan[] | string> {
     const sql =
-      "SELECT planes.* FROM users JOIN planes ON users.plan_id = planes.idplan WHERE users.user = ?";
-    const params = [user];
+      "SELECT planes.* FROM users JOIN planes ON users.plan_id = planes.idplan WHERE users.email = ?";
+    const params = [email];
     try {
       const [result]: any = await query(sql, params);
       const data: any = Object.values(JSON.parse(JSON.stringify(result)));

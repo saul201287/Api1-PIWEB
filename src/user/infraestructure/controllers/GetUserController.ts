@@ -7,8 +7,7 @@ export class GetUserControll {
   async run(req: Request, res: Response, next: NextFunction) {
     const data = req.body;
     try {
-      const userN = await this.getUserUseCase.run(data.user, data.password);
-      console.log(userN);
+      const userN = await this.getUserUseCase.run(data.email, data.password);
       
       if (typeof userN != "boolean") {
         res.locals.user = userN;

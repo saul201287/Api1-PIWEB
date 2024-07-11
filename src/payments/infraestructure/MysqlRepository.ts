@@ -53,11 +53,11 @@ export class MysqlRepository implements PaymentsRepository {
     }
   }
 
-  async getPayments(user: string): Promise<Payments[] | null> {
+  async getPayments(email: string): Promise<Payments[] | null> {
     const sql = `SELECT pagos.id,pagos.importe,pagos.fecha,pagos.descripcion, planes.tipo AS nombre_plan,users.lastname, users.name AS usuario 
     FROM pagos JOIN users ON pagos.id_user = users.idUsers JOIN planes ON pagos.id_plan = planes.idplan
-     WHERE users.user = ?`;
-    const params = [user];
+     WHERE users.email = ?`;
+    const params = [email];
     try {
       const [result]: any = await query(sql, params);
       const data: any = Object.values(JSON.parse(JSON.stringify(result)));
@@ -83,11 +83,11 @@ export class MysqlRepository implements PaymentsRepository {
       return null;
     }
   }
-  async getPayment(user: string, id_pago:string): Promise<Payments[] | null> {
+  async getPayment(email: string, id_pago:string): Promise<Payments[] | null> {
     const sql = `SELECT pagos.id,pagos.importe,pagos.fecha,pagos.descripcion, planes.tipo AS nombre_plan,users.lastname, users.name AS usuario 
     FROM pagos JOIN users ON pagos.id_user = users.idUsers JOIN planes ON pagos.id_plan = planes.idplan
-     WHERE users.user = ? && pagos.id = ?`;
-    const params = [user, id_pago];
+     WHERE users.email = ? && pagos.id = ?`;
+    const params = [email, id_pago];
     try {
       const [result]: any = await query(sql, params);
       const data: any = Object.values(JSON.parse(JSON.stringify(result)));
