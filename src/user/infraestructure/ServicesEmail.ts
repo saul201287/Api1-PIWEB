@@ -78,7 +78,7 @@ export class servicesEmail implements IServicesEmail {
                     <h2 style="color: #333;">Solicitud para restablecer tu contraseña</h2>
                     <p style="color: #555;">Hola ${nombre},</p>
                     <p style="color: #555;">Recibimos una solicitud para restablecer tu contraseña. Haz clic en el botón de abajo para restablecerla:</p>
-                    <a href="http://your-website.com/reset-password?token=${token}&email=${encodeURIComponent(
+                    <a href="${process.env.URL_FROTNEND}/RecuperacionDeContraseña?token=${token}&email=${encodeURIComponent(
                       email
                     )}" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background-color: #28a745; color: #ffffff; text-decoration: none; border-radius: 5px;">Restablecer contraseña</a>
                     <p style="color: #555; margin-top: 20px;">Si no solicitaste un cambio de contraseña, por favor ignora este correo.</p>
