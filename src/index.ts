@@ -3,7 +3,9 @@ import morgan from "morgan";
 import { Signale } from "signale";
 import * as dotenv from "dotenv";
 import helmet from "helmet";
-import cors from "cors"
+import cors from "cors";
+//import cookieParser from 'cookie-parser';
+import rateLimit from "express-rate-limit";
 import { userRouter } from "./user/infraestructure/RouterUser";
 import { planRouter } from "./planes/infraestructure/RoouterPlans";
 import { paymentsRouter } from "./payments/infraestructure/PaymentsRouter";
@@ -16,10 +18,17 @@ app.use(morgan("dev"));
 
 app.use(cors({ origin: "*" }));
 
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+});
+
+app.use(limiter);
 app.use(express.json());
 app.use("/user", userRouter);
-app.use("/plan", planRouter)
-app.use("/payments",paymentsRouter)
+app.use("/plan", planRouter);
+app.use("/payments", paymentsRouter);
 
 const options = {
   secrets: ["([0-9]{4}-?)+"],
