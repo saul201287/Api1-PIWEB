@@ -13,7 +13,6 @@ import { paymentsRouter } from "./payments/infraestructure/PaymentsRouter";
 dotenv.config();
 const app = express();
 app.use(helmet.hidePoweredBy());
-dotenv.config();
 app.use(morgan("dev"));
 
 app.use(cors({ origin: "*" }));
@@ -22,6 +21,10 @@ app.use(cors({ origin: "*" }));
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
+  keyGenerator: (req, res) => {
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    return ip ? ip.toString() : 'default';
+  }
 });
 
 app.use(limiter);
