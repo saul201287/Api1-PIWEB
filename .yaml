@@ -1,9 +1,11 @@
-dependencies:
+package_update: true
+package_upgrade: true
+packages:
   - nodejs
   - npm
 
-commands:
-  - cd api1/Api1-PIWEB
+runcmd:
+  - cd /home/ubuntu/api1/Api1-PIWEB
   - npm install
   - npm run tsc
   - npm start
