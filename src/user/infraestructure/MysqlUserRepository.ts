@@ -21,6 +21,8 @@ export class MysqlUserRepository implements userRepository {
   ): Promise<User | null> {
     const currentDate = new Date();
     fechaPlan = addOneMonth(currentDate);
+    console.log(direccion, 1);
+    
     const sql =
       "INSERT INTO users (idUsers,name,lastname,email,password, telefono, fechaPlan, direccion) VALUES (?,?,?,?,?,?,?,?)";
     const params: any[] = [

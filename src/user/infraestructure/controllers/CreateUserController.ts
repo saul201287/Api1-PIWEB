@@ -9,6 +9,7 @@ export class CreateUserController {
     const data = req.body;
     const validationes = new ValidatorValues();
     try {
+      console.log(data.direccion, 2);
       
      if ((await validationes.validateEmailExistence(data.email)) > 0) {
         res.status(409).send({
