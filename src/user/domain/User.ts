@@ -8,5 +8,6 @@ export class User{
       readonly password: string,
       readonly telefono: Number,
       readonly plan: Date,
+      readonly direccion:string
     ) {}
   }

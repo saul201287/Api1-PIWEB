@@ -19,7 +19,8 @@ export class CreateUserUseCase {
     email: string,
     password: string,
     telefono: number,
-    fechaPlan:Date
+    fechaPlan:Date,
+    direccion:string
   ): Promise<{ user: User; token: string } | null> {
     try {
       const newPassword = await this.options.encodePassword(password);
@@ -33,7 +34,8 @@ export class CreateUserUseCase {
         email,
         newPassword,
         telefono,
-        fechaPlan
+        fechaPlan,
+        direccion
       );
       if (User) {
         await this.serviceEmail.run(email, nombre)

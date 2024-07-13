@@ -23,7 +23,8 @@ export class CreateUserController {
           data.email,
           data.password,
           data.telefono,
-          data.fechaPlan
+          data.fechaPlan,
+          data.direccion
         );
 
         if (user) {

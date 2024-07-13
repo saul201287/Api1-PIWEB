@@ -16,12 +16,13 @@ export class MysqlUserRepository implements userRepository {
     email: string,
     password: string,
     telefono: number,
-    fechaPlan: Date
+    fechaPlan: Date,
+    direccion:string
   ): Promise<User | null> {
     const currentDate = new Date();
     fechaPlan = addOneMonth(currentDate);
     const sql =
-      "INSERT INTO users (idUsers,name,lastname,email,password, telefono, fechaPlan) VALUES (?,?,?,?,?,?,?)";
+      "INSERT INTO users (idUsers,name,lastname,email,password, telefono, fechaPlan, direccion) VALUES (?,?,?,?,?,?,?,?)";
     const params: any[] = [
       id,
       nombre,
@@ -30,6 +31,7 @@ export class MysqlUserRepository implements userRepository {
       password,
       telefono.toString(),
       fechaPlan,
+      direccion
     ];
 
     try {
@@ -42,7 +44,8 @@ export class MysqlUserRepository implements userRepository {
         email,
         password,
         telefono,
-        fechaPlan
+        fechaPlan,
+        direccion
       );
       return userNew;
     } catch (error) {
@@ -69,7 +72,8 @@ export class MysqlUserRepository implements userRepository {
               user.email,
               user.password,
               user.telefono,
-              user.fechaPlan
+              user.fechaPlan,
+              user.direccion
             )
         );
         return users;
