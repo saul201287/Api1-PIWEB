@@ -14,7 +14,6 @@ export class PutUserPassUseCase {
           password,
           userIsTrue[0].password
         );
-        console.log(isPassModific);
         
         if (isPassModific) {
           const newPass = await this.encrypt.encodePassword(password2);

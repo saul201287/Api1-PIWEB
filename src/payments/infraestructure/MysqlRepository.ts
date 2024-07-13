@@ -73,7 +73,6 @@ export class MysqlRepository implements PaymentsRepository {
               payment.descripcion
             )
         );
-        console.log(payments);
         return payments;
       } else {
         return null;
@@ -103,7 +102,6 @@ export class MysqlRepository implements PaymentsRepository {
               payment.descripcion
             )
         );
-        console.log(payments);
         return payments;
       } else {
         return null;
