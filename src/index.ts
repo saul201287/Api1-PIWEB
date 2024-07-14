@@ -36,6 +36,9 @@ const optionsHTTPS = {
   key: fs.readFileSync(String(process.env.RUTA_KEY)),
   cert: fs.readFileSync(String(process.env.RUTA_CERTIFICADO))
 };
+console.log(process.env.RUTA_KEY);
+console.log(process.env.RUTA_CERTIFICADO);
+
 const logger = new Signale();
 
 const port = process.env.PORT;
