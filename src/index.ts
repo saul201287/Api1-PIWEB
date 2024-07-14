@@ -32,6 +32,10 @@ app.use("/user", userRouter);
 app.use("/plan", planRouter);
 app.use("/payments", paymentsRouter);
 
+app.get("/", (req, res) => {
+  res.send("API is running");
+});
+
 const optionsHTTPS = {
   key: fs.readFileSync(String(process.env.RUTA_KEY)),
   cert: fs.readFileSync(String(process.env.RUTA_CERTIFICADO))
