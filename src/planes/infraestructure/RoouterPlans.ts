@@ -35,7 +35,7 @@ planRouter.put(
       });
   }
 );
-planRouter.post(
+planRouter.get(
   "/getPlans",
   (req, res, next) => {
     validateTokenController
