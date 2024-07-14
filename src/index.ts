@@ -6,6 +6,8 @@ import helmet from "helmet";
 import cors from "cors";
 //import cookieParser from 'cookie-parser';
 import rateLimit from "express-rate-limit";
+import https from 'https';
+import fs from "fs";
 import { userRouter } from "./user/infraestructure/RouterUser";
 import { planRouter } from "./planes/infraestructure/RoouterPlans";
 import { paymentsRouter } from "./payments/infraestructure/PaymentsRouter";
@@ -36,12 +38,15 @@ app.use("/payments", paymentsRouter);
 const options = {
   secrets: ["([0-9]{4}-?)+"],
 };
-
+const optionsHTTPS = {
+  key: fs.readFileSync(String(process.env.RUTA_KEY)),
+  cert: fs.readFileSync(String(process.env.RUTA_CERTIFICADO))
+};
 const logger = new Signale(options);
 
 const port: string | undefined = process.env.PORT;
 
-app.listen(port, () => {
+https.createServer(optionsHTTPS, app).listen(port, () => {
   logger.success("server listening on port:", port);
 });
 
