@@ -13,6 +13,7 @@ export class PayPlanController {
         data.email,
         data.metodoPago,
         data.monto,
+        data.direccion,
         data.paquete
       );
       if (typeof pay == "boolean") {

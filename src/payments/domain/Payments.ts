@@ -5,6 +5,7 @@ export class Payments {
     readonly id_plan: number,
     readonly importe: number,
     readonly fecha: Date,
+    readonly direccion:string,
     readonly descripcion: [string, string, number, number, string]
   ) {}
 }

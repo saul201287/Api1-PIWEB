@@ -26,7 +26,7 @@ export class MysqlRepository implements PaymentsRepository {
   }
   async payPlan(payment: Payments): Promise<Payments | null> {
     const sql =
-      "INSERT INTO pagos (id, id_user,id_plan,importe,fecha,descripcion) VALUES (?,?,?,?,?,?)";
+      "INSERT INTO pagos (id, id_user,id_plan,importe,fecha,descripcion, direccion) VALUES (?,?,?,?,?,?,?)";
     const params = [
       payment.id,
       payment.id_user,
@@ -34,6 +34,7 @@ export class MysqlRepository implements PaymentsRepository {
       payment.importe,
       payment.fecha,
       payment.descripcion,
+      payment.direccion,
     ];
     try {
       const [result]: any = await query(sql, params);
@@ -44,6 +45,7 @@ export class MysqlRepository implements PaymentsRepository {
         id_plan: payment.id_plan,
         importe: payment.importe,
         fecha: payment.fecha,
+        direccion:payment.direccion,
         descripcion: payment.descripcion,
       };
       return pay;
@@ -70,6 +72,7 @@ export class MysqlRepository implements PaymentsRepository {
               payment.usuario,
               payment.importe,
               payment.fecha,
+              payment.direccion,
               payment.descripcion
             )
         );
@@ -99,6 +102,7 @@ export class MysqlRepository implements PaymentsRepository {
               payment.usuario,
               payment.importe,
               payment.fecha,
+              payment.direccion,
               payment.descripcion
             )
         );

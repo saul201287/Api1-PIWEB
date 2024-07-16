@@ -20,6 +20,7 @@ export class PayPlanUseCase {
     email: string,
     metodoPago: string,
     monto: number,
+    direccion:string,
     paquete: number
   ): Promise<Payments | string | boolean> {
     try {
@@ -33,6 +34,7 @@ export class PayPlanUseCase {
           id_plan: userFind.idplan,
           importe: monto,
           fecha: fecha,
+          direccion:direccion,
           descripcion: [email, metodoPago, paquete, cvv, tarjeta],
         };
         const statusPayment = await this.sendpayRabbit.run(data);

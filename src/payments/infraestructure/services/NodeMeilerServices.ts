@@ -53,9 +53,18 @@ export class NodeMailerServices implements IServicesEmailPayments {
       color: rgb(0, 0, 0),
     });
 
-    page.drawText(`ID de Transacción: ${payment.id}`, {
+    
+    page.drawText(`Dirección de envio: ${payment.direccion}`, {
       x: 50,
       y: height - 180,
+      size: fontSize,
+      font: timesRomanFont,
+      color: rgb(0, 0, 0),
+    });
+
+    page.drawText(`ID de Transacción: ${payment.id}`, {
+      x: 50,
+      y: height - 200,
       size: fontSize,
       font: timesRomanFont,
       color: rgb(0, 0, 0),
