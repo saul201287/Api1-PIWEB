@@ -8,11 +8,11 @@ export class PutProductController {
     try {
       const status = await this.product.run(data.id, data.id_plan);
       if (status) {
-        res.status(201).json({
+        res.status(200).json({
           messages: "Producto modificado",
         });
       } else {
-        res.status(409).json({
+        res.status(406).json({
           messages: "Error en el proceso",
         });
       }
