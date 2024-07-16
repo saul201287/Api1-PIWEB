@@ -35,6 +35,9 @@ app.use("/payments", paymentsRouter);
 app.get("/", (req, res) => {
   res.send("API is running");
 });
+const options = {
+  secrets: ["([0-9]{4}-?)+"],
+};
 
 const optionsHTTPS = {
   key: fs.readFileSync(String(process.env.RUTA_KEY)),
@@ -43,7 +46,7 @@ const optionsHTTPS = {
 console.log(process.env.RUTA_KEY);
 console.log(process.env.RUTA_CERTIFICADO);
 
-const logger = new Signale();
+const logger = new Signale(options);
 
 const port = process.env.PORT;
 
