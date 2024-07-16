@@ -15,7 +15,7 @@ dotenv.config();
 const app = express();
 app.use(helmet.hidePoweredBy());
 app.use(morgan("dev"));
-app.use(cors({ origin: "187.244.114.179, 187.244.121.191" }));
+app.use(cors({ origin: "187.244.114.179" }));
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
