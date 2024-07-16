@@ -8,8 +8,7 @@ export interface userRepository {
     email: string,
     password: string,
     telefono: number,
-    fecha:Date,
-    direccion:string
+    fecha:Date
   ): Promise<User | null>;
   getUser(email: string, password: string): Promise<User[] | boolean>;
   getEmail(email: string): Promise<string | boolean>;

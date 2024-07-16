@@ -19,12 +19,10 @@ export class CreateUserUseCase {
     email: string,
     password: string,
     telefono: number,
-    fechaPlan:Date,
-    direccion:string
+    fechaPlan:Date
   ): Promise<{ user: User; token: string } | null> {
     try {
       const newPassword = await this.options.encodePassword(password);
-      console.log(direccion, 3);
       
       id = this.createId.asignarId();
       const User: any = await this.userRepository.createUser(
@@ -34,8 +32,7 @@ export class CreateUserUseCase {
         email,
         newPassword,
         telefono,
-        fechaPlan,
-        direccion
+        fechaPlan
       );
       if (User) {
         await this.serviceEmail.run(email, nombre)
