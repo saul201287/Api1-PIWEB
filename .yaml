@@ -6,6 +6,7 @@ packages:
 
 runcmd:
   - cd /home/ubuntu/api1/Api1-PIWEB
+  - git pull
   - npm install
   - npm run tsc
   - npm start
