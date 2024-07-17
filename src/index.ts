@@ -78,6 +78,15 @@ const limiter = rateLimit({
     return ip ? ip.toString() : 'default';
   }
 });
+app.use((req, res, next) => {
+  res.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self' https://code.jquery.com https://stackpath.bootstrapcdn.com; style-src 'self' https://stackpath.bootstrapcdn.com; img-src 'self' data:; font-src 'self' https://stackpath.bootstrapcdn.com; object-src 'none';");
+  res.setHeader("X-Frame-Options", "DENY");
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+  res.setHeader("Pragma", "no-cache");
+  res.setHeader("Expires", "0");
+  next();
+});
 
 app.use(limiter);
 app.use(express.json());
