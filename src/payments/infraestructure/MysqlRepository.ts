@@ -34,7 +34,7 @@ export class MysqlRepository implements PaymentsRepository {
       return null;
     }
   }
-  async payPlan(payment: Payments): Promise<[Payments,string] | null> {
+  async payPlan(payment: Payments): Promise<[Payments, string] | null> {
     const currentDate = new Date();
     const sql =
       "INSERT INTO pagos (id, id_user,id_plan,importe,fecha,descripcion, direccion) VALUES (?,?,?,?,?,?,?)";
@@ -48,14 +48,18 @@ export class MysqlRepository implements PaymentsRepository {
       payment.direccion,
     ];
     const sql2 = "UPDATE users SET fechaPlan=? where idUsers = ?";
+    const sql3 = "SELECT fechaPlan FROM users where idUsers = ?";
+    const [fecha]: any = await query(sql3, [payment.id_user]);
+    const res: any = Object.values(JSON.parse(JSON.stringify(fecha)));
+    const fechaUs = res[0].fechaPlan;
     let params2: Date;
     if (payment.id_plan == 1) {
       params2 = addOneMonth(currentDate);
     } else {
-      params2 = addOneYear(currentDate);
+      params2 = addOneYear(fechaUs);
     }
-   
-    const formattedDate = params2.toLocaleDateString('en-US');
+
+    const formattedDate = params2.toLocaleDateString("en-US");
     try {
       await query(sql2, [params2, payment.id_user]);
       const [result]: any = await query(sql, params);
