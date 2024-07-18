@@ -16,7 +16,7 @@ export class GetPaymentController {
           });
         } else {
           res.status(200).json({
-            messages: "elemntos encontrados",
+            messages: "elementos encontrados",
             data: payments,
           });
         }

@@ -58,6 +58,8 @@ export class MysqlRepository implements PaymentsRepository {
       params2 = addOneYear(fechaUs);
     }
 
+    console.log(params2, payment.id_plan);
+    
     const formattedDate = params2.toLocaleDateString("en-US");
     try {
       await query(sql2, [params2, payment.id_user]);

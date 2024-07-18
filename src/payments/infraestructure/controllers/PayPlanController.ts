@@ -5,6 +5,8 @@ export class PayPlanController {
   constructor(readonly payPlan: PayPlanUseCase) {}
   async run(req: Request, res: Response) {
     const data = req.body;
+    console.log(data.paquete);
+    
     try {
       const pay = await this.payPlan.run(
         data.tarjeta,
