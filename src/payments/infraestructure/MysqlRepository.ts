@@ -35,7 +35,6 @@ export class MysqlRepository implements PaymentsRepository {
     }
   }
   async payPlan(payment: Payments): Promise<[Payments, string] | null> {
-    const currentDate = new Date();
     const sql =
       "INSERT INTO pagos (id, id_user,id_plan,importe,fecha,descripcion, direccion) VALUES (?,?,?,?,?,?,?)";
     const params = [
@@ -54,7 +53,7 @@ export class MysqlRepository implements PaymentsRepository {
     const fechaUs = res[0].fechaPlan;
     let params2: Date;
     if (payment.id_plan == 1) {
-      params2 = addOneMonth(currentDate);
+      params2 = addOneMonth(fechaUs);
     } else {
       params2 = addOneYear(fechaUs);
     }
