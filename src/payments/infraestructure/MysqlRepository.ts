@@ -34,7 +34,7 @@ export class MysqlRepository implements PaymentsRepository {
       return null;
     }
   }
-  async payPlan(payment: Payments): Promise<Payments | null> {
+  async payPlan(payment: Payments): Promise<[Payments,string] | null> {
     const currentDate = new Date();
     const sql =
       "INSERT INTO pagos (id, id_user,id_plan,importe,fecha,descripcion, direccion) VALUES (?,?,?,?,?,?,?)";
@@ -54,6 +54,8 @@ export class MysqlRepository implements PaymentsRepository {
     } else {
       params2 = addOneYear(currentDate);
     }
+   
+    const formattedDate = params2.toLocaleDateString('en-US');
     try {
       await query(sql2, [params2, payment.id_user]);
       const [result]: any = await query(sql, params);
@@ -67,7 +69,7 @@ export class MysqlRepository implements PaymentsRepository {
         direccion: payment.direccion,
         descripcion: payment.descripcion,
       };
-      return pay;
+      return [pay, formattedDate];
     } catch (error) {
       console.error(error);
       return null;

@@ -20,12 +20,12 @@ export class PayPlanUseCase {
     email: string,
     metodoPago: string,
     monto: number,
-    direccion:string,
+    direccion: string,
     paquete: number
-  ): Promise<Payments | string | boolean> {
+  ): Promise<[Payments, string] | string | boolean> {
     try {
-      const userFind:any  = await this.user.run(email);
-      
+      const userFind: any = await this.user.run(email);
+
       if (userFind != null) {
         const id_pago = this.idgenerador.asignarId();
         const data: Payments = {
@@ -34,14 +34,16 @@ export class PayPlanUseCase {
           id_plan: userFind.idplan,
           importe: monto,
           fecha: fecha,
-          direccion:direccion,
+          direccion: direccion,
           descripcion: [email, metodoPago, paquete, cvv, tarjeta],
         };
         const statusPayment = await this.sendpayRabbit.run(data);
         if (statusPayment) {
           this.sendmailPay.run(email, data);
-          await this.paymentsRepository.payPlan(data)
-          return data;
+          const [datos, date]: any = await this.paymentsRepository.payPlan(
+            data
+          );
+          return [data, date];
         } else {
           return false;
         }
