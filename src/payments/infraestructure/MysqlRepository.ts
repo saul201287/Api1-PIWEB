@@ -2,6 +2,16 @@ import { query } from "../../database/mysql";
 import { Payments } from "../domain/Payments";
 import { PaymentsRepository } from "../domain/PaymentsRepository";
 
+function addOneMonth(date: Date): Date {
+  const newDate = new Date(date);
+  newDate.setMonth(newDate.getMonth() + 1);
+  return newDate;
+}
+function addOneYear(date: Date): Date {
+  const newDate = new Date(date);
+  newDate.setFullYear(newDate.getFullYear() + 1);
+  return newDate;
+}
 export class MysqlRepository implements PaymentsRepository {
   async findUser(
     email: string
@@ -25,6 +35,7 @@ export class MysqlRepository implements PaymentsRepository {
     }
   }
   async payPlan(payment: Payments): Promise<Payments | null> {
+    const currentDate = new Date();
     const sql =
       "INSERT INTO pagos (id, id_user,id_plan,importe,fecha,descripcion, direccion) VALUES (?,?,?,?,?,?,?)";
     const params = [
@@ -36,7 +47,15 @@ export class MysqlRepository implements PaymentsRepository {
       payment.descripcion,
       payment.direccion,
     ];
+    const sql2 = "UPDATE users SET fechaPlan=? where idUsers = ?";
+    let params2: Date;
+    if (payment.id_plan == 1) {
+      params2 = addOneMonth(currentDate);
+    } else {
+      params2 = addOneYear(currentDate);
+    }
     try {
+      await query(sql2, [params2, payment.id_user]);
       const [result]: any = await query(sql, params);
       const data: any = Object.values(JSON.parse(JSON.stringify(result)));
       const pay: Payments = {
@@ -45,7 +64,7 @@ export class MysqlRepository implements PaymentsRepository {
         id_plan: payment.id_plan,
         importe: payment.importe,
         fecha: payment.fecha,
-        direccion:payment.direccion,
+        direccion: payment.direccion,
         descripcion: payment.descripcion,
       };
       return pay;
@@ -85,7 +104,7 @@ export class MysqlRepository implements PaymentsRepository {
       return null;
     }
   }
-  async getPayment(email: string, id_pago:string): Promise<Payments[] | null> {
+  async getPayment(email: string, id_pago: string): Promise<Payments[] | null> {
     const sql = `SELECT pagos.id,pagos.importe,pagos.fecha,pagos.descripcion, planes.tipo AS nombre_plan,users.lastname, users.name AS usuario 
     FROM pagos JOIN users ON pagos.id_user = users.idUsers JOIN planes ON pagos.id_plan = planes.idplan
      WHERE users.email = ? && pagos.id = ?`;
