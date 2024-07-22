@@ -1,125 +1,15 @@
 import express from "express";
+import { validateTokenController } from "../../auth/infraestructure/DependenciesAuth";
 import {
-  createTokenControll,
-  validateTokenController,
-} from "../../auth/infraestructure/DependenciesAuth";
-import {
-  createUserController,
-  putUserPassController,
-  getUserController,
-  recoverPassController,
-  putUserPassRecoverController,
-  getNotificationController,
-} from "./DependenciesUser";
+  getDataController,
+  getDataDateController,
+  getIncidenciasController,
+  getIncidenciasDateController,
+} from "./Dependencies";
+export const routerData = express.Router();
 
-export const userRouter = express.Router();
-
-userRouter.post(
-  "/",
-  (req, res, next) => {
-    createUserController
-      .run(req, res, next)
-      .then((user) => {
-        return user;
-      })
-      .catch((err) => {
-        res
-          .status(500)
-          .send({ error: err.message, msg: "Error en el servidor" });
-      });
-  },
-  (req, res) => {
-    createTokenControll
-      .run(req, res)
-      .then((user) => {
-        return user;
-      })
-      .catch((err) => {
-        res
-          .status(500)
-          .send({ error: err.message, msg: "Error en el servidor" });
-      });
-  }
-);
-userRouter.post("/recoverpass", (req, res) => {
-  recoverPassController
-    .run(req, res)
-    .then((user) => {
-      return user;
-    })
-    .catch((err) => {
-      res.status(500).send({ error: err.message, msg: "Error en el servidor" });
-    });
-});
-userRouter.post(
-  "/login",
-  (req, res, next) => {
-    getUserController
-      .run(req, res, next)
-      .then((user) => {
-        return user;
-      })
-      .catch((err) => {
-        res
-          .status(500)
-          .send({ error: err.message, msg: "Error en el servidor" });
-      });
-  },
-  (req, res) => {
-    createTokenControll
-      .run(req, res)
-      .then((user) => {
-        return user;
-      })
-      .catch((err) => {
-        res
-          .status(500)
-          .send({ error: err.message, msg: "Error en el servidor" });
-      });
-  }
-);
-
-userRouter.put(
-  "/pass",
-  (req, res, next) => {
-    validateTokenController
-      .run(req, res, next)
-      .then((user) => {
-        return user;
-      })
-      .catch((err) => {
-        res
-          .status(500)
-          .send({ error: err.message, msg: "Error en el servidor" });
-      });
-  },
-  (req, res) => {
-    putUserPassController
-      .run(req, res)
-      .then((user) => {
-        return user;
-      })
-      .catch((err) => {
-        res
-          .status(500)
-          .send({ error: err.message, msg: "Error en el servidor" });
-      });
-  }
-);
-
-userRouter.put("/passrecover", (req, res) => {
-  putUserPassRecoverController
-    .run(req, res)
-    .then((user) => {
-      return user;
-    })
-    .catch((err) => {
-      res.status(500).send({ error: err.message, msg: "Error en el servidor" });
-    });
-});
-
-userRouter.get(
-  "/notification/:id_user",
+routerData.get(
+  "/:id_user",
   (req, res, next) => {
     validateTokenController
       .run(req, res, next)
@@ -133,7 +23,91 @@ userRouter.get(
       });
   },
   (req, res) => {
-    getNotificationController
+    getDataController
+      .run(req, res)
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ error: err.message, msg: "Error en el servidor" });
+      });
+  }
+);
+
+routerData.get(
+  "/date/:id_user/:fechaIni/:fechaFin",
+  (req, res, next) => {
+    validateTokenController
+      .run(req, res, next)
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ error: err.message, msg: "Error en el servidor" });
+      });
+  },
+  (req, res) => {
+    getDataDateController
+      .run(req, res)
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ error: err.message, msg: "Error en el servidor" });
+      });
+  }
+);
+
+routerData.get(
+  "/incidencias/:id_user",
+  (req, res, next) => {
+    validateTokenController
+      .run(req, res, next)
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ error: err.message, msg: "Error en el servidor" });
+      });
+  },
+  (req, res) => {
+    getIncidenciasController
+      .run(req, res)
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ error: err.message, msg: "Error en el servidor" });
+      });
+  }
+);
+
+routerData.get(
+  "/incidencias/:id_user/:fechaIni/:fechaFin",
+  (req, res, next) => {
+    validateTokenController
+      .run(req, res, next)
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ error: err.message, msg: "Error en el servidor" });
+      });
+  },
+  (req, res) => {
+    getIncidenciasDateController
       .run(req, res)
       .then((data) => {
         return data;

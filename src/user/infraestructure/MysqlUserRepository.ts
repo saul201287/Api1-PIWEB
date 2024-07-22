@@ -20,7 +20,7 @@ export class MysqlUserRepository implements userRepository {
   ): Promise<User | null> {
     const currentDate = new Date();
     fechaPlan = addOneMonth(currentDate);
-    
+
     const sql =
       "INSERT INTO users (idUsers,name,lastname,email,password, telefono, fechaPlan) VALUES (?,?,?,?,?,?,?)";
     const params: any[] = [
@@ -30,7 +30,7 @@ export class MysqlUserRepository implements userRepository {
       email,
       password,
       telefono.toString(),
-      fechaPlan
+      fechaPlan,
     ];
 
     try {
@@ -59,7 +59,6 @@ export class MysqlUserRepository implements userRepository {
       const dataUsers: any = Object.values(JSON.parse(JSON.stringify(result)));
 
       if (dataUsers.length > 0) {
-        
         const users: User[] = dataUsers.map(
           (user: any) =>
             new User(
@@ -129,7 +128,19 @@ export class MysqlUserRepository implements userRepository {
       return "error: " + error;
     }
   }
-  async deleteUser(id_user: string): Promise<string> {
-    return "";
+  async getNotification(id_user: string): Promise<[] | string> {
+    const params = [id_user];
+    console.log(id_user);
+    
+    const sql = "SELECT * FROM notification where id_user = ?";
+    try {
+      const [result]: any = await query(sql, params);
+      const data: any = Object.values(JSON.parse(JSON.stringify(result)));
+      const notification: [] = data;
+      return notification;
+    } catch (error) {
+      console.error(error);
+      return "error: " + error;
+    }
   }
 }

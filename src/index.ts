@@ -1,4 +1,4 @@
-/*
+
 import express from "express";
 import morgan from "morgan";
 import { Signale } from "signale";
@@ -6,12 +6,11 @@ import * as dotenv from "dotenv";
 import helmet from "helmet";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
-import https from 'https';
-import fs from "fs";
 import { userRouter } from "./user/infraestructure/RouterUser";
 import { planRouter } from "./planes/infraestructure/RoouterPlans";
 import { paymentsRouter } from "./payments/infraestructure/PaymentsRouter";
 import { routerProduct } from "./product/infraestructure/RouterProduct";
+import { routerData } from "./datas/infraestructure/RouterDatas";
 
 dotenv.config();
 const app = express();
@@ -34,6 +33,7 @@ app.use("/user", userRouter);
 app.use("/plan", planRouter);
 app.use("/payments", paymentsRouter);
 app.use("/product",routerProduct)
+app.use("/data",routerData)
 
 app.get("/", (req, res) => {
   res.send("API is running");
@@ -48,8 +48,8 @@ const port = process.env.PORT;
 app.listen(port, () => {
   logger.success("server listening on port:", port);
 });
-*/
 
+/*
 import express from "express";
 import morgan from "morgan";
 import { Signale } from "signale";
@@ -63,6 +63,7 @@ import { userRouter } from "./user/infraestructure/RouterUser";
 import { planRouter } from "./planes/infraestructure/RoouterPlans";
 import { paymentsRouter } from "./payments/infraestructure/PaymentsRouter";
 import { routerProduct } from "./product/infraestructure/RouterProduct";
+import { routerData } from "./datas/infraestructure/RouterDatas";
 
 const corsOptions = {
   origin: "*",
@@ -102,6 +103,7 @@ app.use("/user", userRouter);
 app.use("/plan", planRouter);
 app.use("/payments", paymentsRouter);
 app.use("/product", routerProduct);
+app.use("/data",routerData)
 
 app.get("/", (req, res) => {
   res.send("API is running");
@@ -122,3 +124,4 @@ const port = process.env.PORT;
 https.createServer(optionsHTTPS, app).listen(port, () => {
   logger.success("server listening on port:", port);
 });
+*/

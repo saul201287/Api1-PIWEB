@@ -14,5 +14,5 @@ export interface userRepository {
   getEmail(email: string): Promise<string | boolean>;
   putUserPass(email: string, password: string): Promise<Boolean>;
   putUserPassRecover(email: string, newpass: string): Promise<boolean | string>;
-  deleteUser(id_user: string): Promise<string>;
+  getNotification(id_user:string):Promise<[]|string>
 }

@@ -2,6 +2,7 @@ import { CreateUserUseCase } from "../application/CreateUserUseCase";
 import { GetUserUseCase } from "../application/GeTUserUseCase";
 import { PutUserPassRecoverUseCase } from "../application/PutUserPassRecoverUseCase";
 import { PutUserPassUseCase } from "../application/PutUserPassUseCase";
+import { GetNotification } from "../application/GetNotificationUseCase";
 import { ServicesSendEmailWelcome } from "../application/services/ServicesSendMailWelcome";
 import { SendEmailPassRecover } from "../application/services/SendEmailPassRecover";
 import { CreateUserController } from "./controllers/CreateUserController";
@@ -9,6 +10,7 @@ import { GetUserControll } from "./controllers/GetUserController";
 import { PutUserPassRecoverController } from "./controllers/PutUserPassRecoverController";
 import { PutUserPassController } from "./controllers/PutUserPassController";
 import { RecoverPassController } from "./controllers/RecoverPassController";
+import { GetNotificationController } from "./controllers/GetNotificationController";
 import { MysqlUserRepository } from "./MysqlUserRepository";
 import { IdServices } from "./helpers/ServicesUuidv4";
 import { EncryptServices } from "./helpers/ServicesEncript";
@@ -36,6 +38,7 @@ const sendEmailPassRecover = new SendEmailPassRecover(
   serviceEmail,
   mysqlUserRepository
 );
+const getNotification = new GetNotification(mysqlUserRepository);
 
 export const createUserController = new CreateUserController(createUserUseCase);
 export const getUserController = new GetUserControll(getUserUseCase);
@@ -46,3 +49,4 @@ export const putUserPassController = new PutUserPassController(
 export const recoverPassController = new RecoverPassController(
   sendEmailPassRecover
 );
+export const getNotificationController = new GetNotificationController(getNotification)
