@@ -2,21 +2,20 @@ import { query } from "../../database/mysql";
 import { Data } from "../domain/Data";
 import { DataRepository } from "../domain/DataRepository";
 
-
-function formatDate(date:Date) {
+function formatDate(date: Date) {
   const d = new Date(date);
-  let month = '' + (d.getMonth() + 1);
-  let day = '' + d.getDate();
+  let month = "" + (d.getMonth() + 1);
+  let day = "" + d.getDate();
   const year = d.getFullYear();
 
   if (month.length < 2) {
-    month = '0' + month;
+    month = "0" + month;
   }
   if (day.length < 2) {
-    day = '0' + day;
+    day = "0" + day;
   }
 
-  return [year, month, day].join('-');
+  return [year, month, day].join("-");
 }
 export class mysqlRepository implements DataRepository {
   async getData(id_user: string): Promise<Data[] | string> {
@@ -38,7 +37,7 @@ ORDER BY
       const [result]: any = await query(sql, params);
       const data: any = Object.values(JSON.parse(JSON.stringify(result)));
       console.log(data);
-      
+
       const datas: [] = data;
       return datas;
     } catch (error) {
@@ -51,22 +50,21 @@ ORDER BY
     fechaIni: Date,
     fechaFin: Date
   ): Promise<Data[] | string> {
-    console.log(id_user, fechaFin,fechaIni);
-    const data1 = formatDate(fechaIni)
-    const date2 = formatDate(fechaFin)
+    console.log(id_user, fechaFin, fechaIni);
+    const data1 = formatDate(fechaIni);
+    const date2 = formatDate(fechaFin);
     const params = [data1, date2, id_user];
-    const sql =
-      `SELECT 
+    const sql = `SELECT 
     SUM(consumokwh) AS total_consumokwh FROM historialsensores
     WHERE fecha BETWEEN ? AND ? AND id_user = ?`;
     try {
-      const [result]: any = await query(sql,params);
+      const [result]: any = await query(sql, params);
       console.log(result);
-        
+
       const data: any = Object.values(JSON.parse(JSON.stringify(result)));
-      
+
       const datas: [] = data;
-     
+
       return datas;
     } catch (error) {
       console.error(error);
@@ -81,7 +79,7 @@ ORDER BY
     try {
       const [result]: any = await query(sql, params);
       const data: any = Object.values(JSON.parse(JSON.stringify(result)));
-      
+
       const datas: [] = data;
       return datas;
     } catch (error) {
@@ -94,9 +92,9 @@ ORDER BY
     fechaIni: Date,
     fechaFin: Date
   ): Promise<[] | string> {
-    const params = [id_user, fechaIni, fechaFin];
-    const sql =
-      "SELECT * FROM historialsensores WHERE id_user = ? AND fecha BETWEEN ? AND ? ";
+    const params = [id_user];
+    const sql = `SELECT MONTHNAME(fecha) AS mes, SUM(consumokwh) AS total_consumokwh FROM historialsensores
+       WHERE YEAR(fecha) = YEAR(CURDATE()) AND id_user = ? GROUP BY MONTH(fecha) ORDER BY MONTH(fecha);`;
     try {
       const [result]: any = await query(sql, params);
       const data: any = Object.values(JSON.parse(JSON.stringify(result)));

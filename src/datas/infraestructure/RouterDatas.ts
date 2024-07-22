@@ -94,7 +94,7 @@ routerData.get(
 );
 
 routerData.get(
-  "/incidencias/:id_user/:fechaIni/:fechaFin",
+  "/consumoMes/:id_user/",
   (req, res, next) => {
     validateTokenController
       .run(req, res, next)
