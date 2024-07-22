@@ -5,6 +5,7 @@ import {
   getDataDateController,
   getIncidenciasController,
   getIncidenciasDateController,
+  getConsumoaMesController
 } from "./Dependencies";
 export const routerData = express.Router();
 
@@ -108,6 +109,34 @@ routerData.get(
   },
   (req, res) => {
     getIncidenciasDateController
+      .run(req, res)
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ error: err.message, msg: "Error en el servidor" });
+      });
+  }
+);
+
+routerData.get(
+  "/consumo/:id_user",
+  (req, res, next) => {
+    validateTokenController
+      .run(req, res, next)
+      .then((data) => {
+        return data;
+      })
+      .catch((err) => {
+        res
+          .status(500)
+          .send({ error: err.message, msg: "Error en el servidor" });
+      });
+  },
+  (req, res) => {
+    getConsumoaMesController
       .run(req, res)
       .then((data) => {
         return data;

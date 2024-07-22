@@ -7,7 +7,7 @@ export class GetIncidenciasController {
     const data = req.params;
     try {
       const result = await this.getInc.run(data.id_user);
-      if (result.length > 1 && typeof result != "string") {
+      if (result.length >= 1 && typeof result != "string") {
         res.status(200).json({
           data: result,
         });
@@ -21,6 +21,7 @@ export class GetIncidenciasController {
         });
       }
     } catch (error) {
+      console.error(error);
       res.status(500).json({
         error: error,
       });

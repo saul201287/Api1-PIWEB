@@ -13,4 +13,5 @@ export interface DataRepository {
     fechaIni: Date,
     fechaFin: Date
   ): Promise<[] | string>;
+  getConsumoaMes(id_user:string):Promise<[]|string>
 }

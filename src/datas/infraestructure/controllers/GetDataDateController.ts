@@ -9,7 +9,7 @@ export class GetDataDateController {
     const fechaFin = new Date(data.fechaFin);
     try {
       const result = await this.getData.run(data.id_user, fechaIni, fechaFin);
-      if (result.length > 1 && typeof result != "string") {
+      if (result.length >= 1 && typeof result != "string") {
         res.status(200).json({
           data: result,
         });
@@ -23,6 +23,8 @@ export class GetDataDateController {
         });
       }
     } catch (error) {
+      console.error(error);
+      
       res.status(500).json({
         error: error,
       });

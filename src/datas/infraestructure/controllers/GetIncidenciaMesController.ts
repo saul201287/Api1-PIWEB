@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { GetDataUseCase } from "../../application/GetDataUseCase";
+import {GetConsumoaMesUseCase  } from "../../application/GetConsumoaMesUseCase";
 
-export class GetDataController {
-  constructor(readonly getData: GetDataUseCase) {}
+export class GetConsumoaMesController {
+  constructor(readonly getData: GetConsumoaMesUseCase) {}
   async run(req: Request, res: Response) {
     const data = req.params;
     try {
@@ -22,6 +22,7 @@ export class GetDataController {
       }
     } catch (error) {
       console.error(error);
+      
       res.status(500).json({
         error: error,
       });
