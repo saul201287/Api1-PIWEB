@@ -8,10 +8,11 @@ export class GetDataDateController {
     const fechaIni = new Date(data.fechaIni);
     const fechaFin = new Date(data.fechaFin);
     try {
-      const result = await this.getData.run(data.id_user, fechaIni, fechaFin);
+      const result:any = await this.getData.run(data.id_user, fechaIni, fechaFin);
       if (result.length >= 1 && typeof result != "string") {
+        
         res.status(200).json({
-          data: result,
+          data: result[0].total_consumokwh,
         });
       } else if (result.length < 1 && typeof result != "string") {
         res.status(200).json({
