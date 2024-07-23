@@ -69,7 +69,7 @@ dotenv.config();
 const corsOptions = {
   origin: ['https://www.powerwatch.piweb.lat', 'https://powerwatch.piweb.lat'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-token-access'],
   optionsSuccessStatus: 200 
 };
 
