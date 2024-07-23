@@ -66,10 +66,9 @@ import { routerProduct } from "./product/infraestructure/RouterProduct";
 import { routerData } from "./datas/infraestructure/RouterDatas";
 
 const corsOptions = {
-  origin: "https://www.powerwatch.piweb.lat/, https://powerwatch.piweb.lat/",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-  optionsSuccessStatus: 204,
+  origin: 'https://www.powerwatch.piweb.lat',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 dotenv.config();
