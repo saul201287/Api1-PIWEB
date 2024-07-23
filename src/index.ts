@@ -76,6 +76,13 @@ const corsOptions = {
 const app = express();
 
 app.use(helmet.hidePoweredBy());
+app.use(
+  helmet.hsts({
+    maxAge: 31536000,
+    includeSubDomains: true,
+    preload: true
+  })
+);
 app.use(morgan("dev"));
 app.use(cors(corsOptions));
 app.use(express.json());
