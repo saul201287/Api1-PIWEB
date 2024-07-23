@@ -66,7 +66,7 @@ import { routerProduct } from "./product/infraestructure/RouterProduct";
 import { routerData } from "./datas/infraestructure/RouterDatas";
 
 const corsOptions = {
-  origin: "*",
+  origin: "https://www.powerwatch.piweb.lat/",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
