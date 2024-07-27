@@ -8,7 +8,7 @@ export class CreateUserUseCase {
   constructor(
     readonly userRepository: userRepository,
     readonly options: IEncrypt,
-    readonly serviceEmail : ServicesSendEmailWelcome,
+    readonly serviceEmail: ServicesSendEmailWelcome,
     readonly createId: IGeneratorId
   ) {}
 
@@ -19,11 +19,11 @@ export class CreateUserUseCase {
     email: string,
     password: string,
     telefono: number,
-    fechaPlan:Date
+    fechaPlan: Date
   ): Promise<{ user: User; token: string } | null> {
     try {
       const newPassword = await this.options.encodePassword(password);
-      
+
       id = this.createId.asignarId();
       const User: any = await this.userRepository.createUser(
         id,
@@ -34,13 +34,13 @@ export class CreateUserUseCase {
         telefono,
         fechaPlan
       );
-      if (User) {
-        await this.serviceEmail.run(email, nombre)
+
+      if (typeof User != null) {
+        await this.serviceEmail.run(email, nombre);
         return User;
-      }else{
-        return null
+      } else {
+        return null;
       }
-      
     } catch (error) {
       console.log(error);
       return null;

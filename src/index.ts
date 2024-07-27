@@ -1,4 +1,4 @@
-/*
+
 import express from "express";
 import morgan from "morgan";
 import { Signale } from "signale";
@@ -48,7 +48,7 @@ const port = process.env.PORT;
 app.listen(port, () => {
   logger.success("server listening on port:", port);
 });
-*/
+/*
 import express from "express";
 import morgan from "morgan";
 import { Signale } from "signale";
@@ -130,3 +130,4 @@ const port = process.env.PORT || 3000;
 https.createServer(optionsHTTPS, app).listen(port, () => {
   logger.success("Server listening on port:", port);
 });
+*/
