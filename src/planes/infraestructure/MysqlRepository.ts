@@ -91,7 +91,6 @@ export class MysqlRepository implements PlanRepository {
       } else {
         return false;
       }
-      return true;
     } catch (error) {
       console.error(error);
       return "error: " + error;
