@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { GetNotification } from "../../application/GetNotificationUseCase";
-import { get } from "http";
 
 export class GetNotificationController {
   constructor(readonly getNoti: GetNotification) {}

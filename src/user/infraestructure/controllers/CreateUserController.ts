@@ -13,60 +13,60 @@ export class CreateUserController {
     const data = req.body;
     const validationes = new ValidatorValues();
     try {
-      if ((await validationes.validateEamil(data.email)) == 0) {
-        res.status(409).send({
+      // Validaciones concurrentes
+      const [isValidEmail, emailExists] = await Promise.all([
+        validationes.validateEamil(data.email),
+        validationes.validateEmailExistence(data.email),
+      ]);
+
+      if (isValidEmail == 0) {
+        return res.status(409).send({
           status: "error",
           data: "El correo ingresado no es valido",
         });
-      } else if ((await validationes.validateEmailExistence(data.email)) > 0) {
-        res.status(409).send({
+      }
+
+      if (emailExists > 0) {
+        return res.status(409).send({
           status: "error",
           data: "El correo ingresado ya se encuentra registrado",
         });
-      } else {
-        const user: any = await this.createUserUseCase.run(
-          data.id.trim(),
-          sanitizeString(data.nombre).trim(),
-          sanitizeString(data.apellidos).trim(),
-          sanitizeString(data.email).trim(),
-          sanitizeString(data.password).trim(),
-          data.telefono,
-          data.fechaPlan
-        );
-        console.log(
-          data.id.trim(),
-          sanitizeString(data.nombre).trim(),
-          sanitizeString(data.apellidos).trim(),
-          sanitizeString(data.email).trim(),
-          sanitizeString(data.password).trim(),
-          data.telefono,
-          data.fechaPlan
-        );
-        console.log(user);
+      }
 
-        if (user != null) {
-          const data = {
-            id: user?.id,
-            nombre: user?.nombre,
-            apellidos: user?.apellidos,
-            email: user?.email,
-            password: user?.password,
-            telefono: user?.telefono,
-            fechaPlan: user?.fechaPlan,
-          };
-          res.locals.user = data;
-          next();
-        } else
-          res.status(409).send({
-            status: "error",
-            data: "NO fue posible agregar el registro",
-          });
+      // Crear usuario
+      const user:any = await this.createUserUseCase.run(
+        data.id.trim(),
+        sanitizeString(data.nombre).trim(),
+        sanitizeString(data.apellidos).trim(),
+        sanitizeString(data.email).trim(),
+        sanitizeString(data.password).trim(),
+        data.telefono,
+        data.fechaPlan
+      );
+
+      if (user) {
+        const responseData = {
+          id: user?.id,
+          nombre: user?.nombre,
+          apellidos: user?.apellidos,
+          email: user?.email,
+          password: user?.password,
+          telefono: user?.telefono,
+          fechaPlan: user?.fechaPlan,
+        };
+        res.locals.user = responseData;
+        return next();
+      } else {
+        return res.status(409).send({
+          status: "error",
+          data: "NO fue posible agregar el registro",
+        });
       }
     } catch (error) {
       console.error(error);
-      res.status(500).send({
+      return res.status(500).send({
         status: "error",
-        data: "Ocurrio un error",
+        data: "Ocurrió un error",
         mesagges: error,
       });
     }
