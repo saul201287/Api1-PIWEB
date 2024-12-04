@@ -60,7 +60,6 @@ export class servicesEmail implements IServicesEmail {
       const isVerified = await verify();
       if (!isVerified) return emails.map(() => false);
 
-      // Paralelizar el envío de correos a múltiples destinatarios
       const sendPromises = emails.map((email) =>
         transporter.sendMail({
           from: process.env.TO_EMAIL,
@@ -76,7 +75,6 @@ export class servicesEmail implements IServicesEmail {
 
       const results = await Promise.allSettled(sendPromises);
 
-      // Mapear los resultados para identificar envíos exitosos y fallidos
       return results.map((result) => result.status === "fulfilled");
     } catch (error) {
       console.error("Error al enviar promociones:", error);

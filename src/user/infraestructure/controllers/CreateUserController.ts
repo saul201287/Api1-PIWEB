@@ -13,7 +13,6 @@ export class CreateUserController {
     const data = req.body;
     const validationes = new ValidatorValues();
     try {
-      // Validaciones concurrentes
       const [isValidEmail, emailExists] = await Promise.all([
         validationes.validateEamil(data.email),
         validationes.validateEmailExistence(data.email),
@@ -33,7 +32,6 @@ export class CreateUserController {
         });
       }
 
-      // Crear usuario
       const user:any = await this.createUserUseCase.run(
         data.id.trim(),
         sanitizeString(data.nombre).trim(),
