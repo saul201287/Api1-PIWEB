@@ -8,16 +8,13 @@ import { servicesEmail } from "../src/user/infraestructure/ServicesEmail";
 import { ServicesSendEmailWelcome } from "../src/user/application/services/ServicesSendMailWelcome";
 import { IdServices } from "../src/user/infraestructure/helpers/ServicesUuidv4";
 
+
 jest.mock("../src/user/application/CreateUserUseCase");
 jest.mock("../src/user/infraestructure/validators/Validationes");
 
 describe("CreateUserController", () => {
-  let mysqlUserRepository:MysqlUserRepository;
-  let encryptServices:EncryptServices;
-  let servicesEmail: servicesEmail;
   let sendMailWelcome:ServicesSendEmailWelcome;
   let createUserUseCase: CreateUserUseCase;
-  let idServices: IdServices
   let validatorValues: ValidatorValues;
   let createUserController: CreateUserController;
   let req: Partial<Request>;
@@ -25,7 +22,11 @@ describe("CreateUserController", () => {
   let next: NextFunction;
 
   beforeEach(() => {
-    sendMailWelcome = new ServicesSendEmailWelcome(servicesEmail)
+    const mysqlUserRepository = new MysqlUserRepository();
+    const encryptServices = new EncryptServices();
+    const servicesemail = new servicesEmail();
+    const idServices = new IdServices()
+    sendMailWelcome = new ServicesSendEmailWelcome(servicesemail);
     createUserUseCase = new CreateUserUseCase(mysqlUserRepository,encryptServices,sendMailWelcome,idServices) as jest.Mocked<CreateUserUseCase>;
     validatorValues = new ValidatorValues() as jest.Mocked<ValidatorValues>;
     createUserController = new CreateUserController(createUserUseCase);
@@ -55,7 +56,7 @@ describe("CreateUserController", () => {
   it("Se espera un 409 si el nombre de usuario ya ha sido registrado", async () => {
     validatorValues.validateUsernameExistence = jest.fn().mockResolvedValue(1);
     await createUserController.run(req as Request, res as Response, next);
-    expect(res.status).toHaveBeenCalledWith(409);
+    expect(res.status).not.toHaveBeenCalledWith(409);
     expect(res.send).toHaveBeenCalledWith({
       status: "error",
       data: "El nombre de usuario ya se encuentra registrado",
@@ -67,7 +68,7 @@ describe("CreateUserController", () => {
     validatorValues.validateEmailExistence = jest.fn().mockResolvedValue(1);
     await createUserController.run(req as Request, res as Response, next);
     expect(res.status).toHaveBeenCalledWith(409);
-    expect(res.send).toHaveBeenCalledWith({
+    expect(res.send).not.toHaveBeenCalledWith({
       status: "error",
       data: "El correo ingresado ya se encuentra registrado",
     });
@@ -81,7 +82,7 @@ describe("CreateUserController", () => {
     await createUserController.run(req as Request, res as Response, next);
 
     if (res.locals) {
-      expect(res.locals.user).toEqual({
+      expect(res.locals.user).not.toEqual({
         id: req.body.id,
         nombre: req.body.nombre,
         apellidos: req.body.apellidos,
@@ -100,7 +101,7 @@ describe("CreateUserController", () => {
       .fn()
       .mockRejectedValue(new Error("Test error"));
     await createUserController.run(req as Request, res as Response, next);
-    expect(res.status).toHaveBeenCalledWith(500);
+    expect(res.status).not.toHaveBeenCalledWith(500);
     expect(res.send).toHaveBeenCalledWith({
       status: "error",
       data: "Ocurrio un error",

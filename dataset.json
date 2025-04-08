@@ -1,0 +1,122 @@
+[
+  {
+    "suite": "CreateUserController.test.ts",
+    "assertionCount": 4,
+    "passed": 0,
+    "failed": 4,
+    "duration": 25,
+    "timestamp": "7/4/2025, 01:03:55",
+    "statementsCoverage": "N/A",
+    "linesCoverage": "N/A",
+    "functionsCoverage": "N/A",
+    "branchesCoverage": "N/A"
+  },
+  {
+    "suite": "RecoverPassController.test.ts",
+    "assertionCount": 4,
+    "passed": 1,
+    "failed": 3,
+    "duration": 5,
+    "timestamp": "7/4/2025, 01:03:59",
+    "statementsCoverage": "N/A",
+    "linesCoverage": "N/A",
+    "functionsCoverage": "N/A",
+    "branchesCoverage": "N/A"
+  },
+  {
+    "suite": "PutUserPassRecoverController.test.ts",
+    "assertionCount": 4,
+    "passed": 3,
+    "failed": 1,
+    "duration": 5,
+    "timestamp": "7/4/2025, 01:03:59",
+    "statementsCoverage": "N/A",
+    "linesCoverage": "N/A",
+    "functionsCoverage": "N/A",
+    "branchesCoverage": "N/A"
+  },
+  {
+    "suite": "CreateUserController.test.js",
+    "assertionCount": 4,
+    "passed": 0,
+    "failed": 4,
+    "duration": 89,
+    "timestamp": "7/4/2025, 01:03:59",
+    "statementsCoverage": "N/A",
+    "linesCoverage": "N/A",
+    "functionsCoverage": "N/A",
+    "branchesCoverage": "N/A"
+  },
+  {
+    "suite": "GetUserController.test.ts",
+    "assertionCount": 6,
+    "passed": 0,
+    "failed": 6,
+    "duration": 11,
+    "timestamp": "7/4/2025, 01:04:00",
+    "statementsCoverage": "N/A",
+    "linesCoverage": "N/A",
+    "functionsCoverage": "N/A",
+    "branchesCoverage": "N/A"
+  },
+  {
+    "suite": "RecoverPassController.test.js",
+    "assertionCount": 4,
+    "passed": 3,
+    "failed": 1,
+    "duration": 5,
+    "timestamp": "7/4/2025, 01:04:00",
+    "statementsCoverage": "N/A",
+    "linesCoverage": "N/A",
+    "functionsCoverage": "N/A",
+    "branchesCoverage": "N/A"
+  },
+  {
+    "suite": "GetUserController.test.js",
+    "assertionCount": 3,
+    "passed": 2,
+    "failed": 1,
+    "duration": 4,
+    "timestamp": "7/4/2025, 01:04:00",
+    "statementsCoverage": "N/A",
+    "linesCoverage": "N/A",
+    "functionsCoverage": "N/A",
+    "branchesCoverage": "N/A"
+  },
+  {
+    "suite": "PutUserPassRecoverController.test.js",
+    "assertionCount": 4,
+    "passed": 3,
+    "failed": 1,
+    "duration": 6,
+    "timestamp": "7/4/2025, 01:04:00",
+    "statementsCoverage": "N/A",
+    "linesCoverage": "N/A",
+    "functionsCoverage": "N/A",
+    "branchesCoverage": "N/A"
+  },
+  {
+    "suite": "PutUserController.test.ts",
+    "assertionCount": 4,
+    "passed": 4,
+    "failed": 0,
+    "duration": 6,
+    "timestamp": "7/4/2025, 01:04:01",
+    "statementsCoverage": "N/A",
+    "linesCoverage": "N/A",
+    "functionsCoverage": "N/A",
+    "branchesCoverage": "N/A"
+  },
+  {
+    "suite": "PutUserController.test.js",
+    "assertionCount": 4,
+    "passed": 4,
+    "failed": 0,
+    "duration": 11,
+    "timestamp": "7/4/2025, 01:04:01",
+    "statementsCoverage": "N/A",
+    "linesCoverage": "N/A",
+    "functionsCoverage": "N/A",
+    "branchesCoverage": "N/A"
+  }
+]

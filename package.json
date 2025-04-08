@@ -46,7 +46,8 @@
     "sanitize-html": "^2.13.0",
     "signale": "^1.4.0",
     "uuidv4": "^6.2.13",
-    "validator": "^13.12.0"
+    "validator": "^13.12.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/csurf": "^1.11.5",

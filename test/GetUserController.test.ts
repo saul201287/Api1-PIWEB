@@ -41,9 +41,8 @@ describe("GetUserControll", () => {
 
     await getUserController.run(req as Request, res as Response, next);
 
-    if (res.locals) {
-      expect(res.locals.user).toEqual(user);
-    }
+    expect(getUserUseCase.run).toHaveBeenCalledWith("testuser", "password");
+    expect(res.locals!.user).toEqual(user);
     expect(next).toHaveBeenCalled();
   });
 
@@ -53,9 +52,7 @@ describe("GetUserControll", () => {
     await getUserController.run(req as Request, res as Response, next);
 
     expect(res.status).toHaveBeenCalledWith(404);
-    expect(res.json).toHaveBeenCalledWith({
-      error: "Credenciales invalidas",
-    });
+    expect(res.json).toHaveBeenCalledWith({ error: "Credenciales invalidas" });
   });
 
   it("Se espera el error 500 si ocurre un error", async () => {
@@ -64,8 +61,39 @@ describe("GetUserControll", () => {
     await getUserController.run(req as Request, res as Response, next);
 
     expect(res.status).toHaveBeenCalledWith(500);
+    expect(res.json).toHaveBeenCalledWith({ error: "Test error" });
+  });
+
+  it("Se espera el error 400 si falta el usuario en el request", async () => {
+    req.body = { password: "password" };
+
+    await getUserController.run(req as Request, res as Response, next);
+
+    expect(res.status).toHaveBeenCalledWith(400);
     expect(res.json).toHaveBeenCalledWith({
-      error: new Error("Test error"),
+      error: "Faltan datos en la solicitud",
     });
+  });
+
+  it("Se espera el error 400 si falta la contraseña en el request", async () => {
+    req.body = { user: "testuser" };
+
+    await getUserController.run(req as Request, res as Response, next);
+
+    expect(res.status).toHaveBeenCalledWith(400);
+    expect(res.json).toHaveBeenCalledWith({
+      error: "Faltan datos en la solicitud",
+    });
+  });
+
+  it("Se espera llamar next() con error si ocurre un error inesperado", async () => {
+    const error = new Error("Unexpected error");
+    getUserUseCase.run = jest.fn().mockImplementation(() => {
+      throw error;
+    });
+
+    await getUserController.run(req as Request, res as Response, next);
+
+    expect(next).toHaveBeenCalledWith(error);
   });
 });

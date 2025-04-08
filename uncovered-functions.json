@@ -1,0 +1,902 @@
+[
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\database\\mysql.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\database\\mysql.js",
+    "functionName": "fulfilled",
+    "line": 5,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\CreateUserUseCase.js",
+    "functionName": "adopt",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\CreateUserUseCase.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\CreateUserUseCase.js",
+    "functionName": "fulfilled",
+    "line": 5,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\CreateUserUseCase.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\GeTUserUseCase.js",
+    "functionName": "(anonymous_0)",
+    "line": 2,
+    "column": 44
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\GeTUserUseCase.js",
+    "functionName": "adopt",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\GeTUserUseCase.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\GeTUserUseCase.js",
+    "functionName": "(anonymous_3)",
+    "line": 4,
+    "column": 36
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\GeTUserUseCase.js",
+    "functionName": "fulfilled",
+    "line": 5,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\GeTUserUseCase.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\GeTUserUseCase.js",
+    "functionName": "step",
+    "line": 7,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\GeTUserUseCase.js",
+    "functionName": "(anonymous_8)",
+    "line": 18,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\GeTUserUseCase.js",
+    "functionName": "(anonymous_9)",
+    "line": 19,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassRecoverUseCase.js",
+    "functionName": "(anonymous_0)",
+    "line": 2,
+    "column": 44
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassRecoverUseCase.js",
+    "functionName": "adopt",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassRecoverUseCase.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassRecoverUseCase.js",
+    "functionName": "(anonymous_3)",
+    "line": 4,
+    "column": 36
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassRecoverUseCase.js",
+    "functionName": "fulfilled",
+    "line": 5,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassRecoverUseCase.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassRecoverUseCase.js",
+    "functionName": "step",
+    "line": 7,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassRecoverUseCase.js",
+    "functionName": "(anonymous_8)",
+    "line": 18,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassRecoverUseCase.js",
+    "functionName": "(anonymous_9)",
+    "line": 19,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassUseCase.js",
+    "functionName": "(anonymous_0)",
+    "line": 2,
+    "column": 44
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassUseCase.js",
+    "functionName": "adopt",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassUseCase.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassUseCase.js",
+    "functionName": "(anonymous_3)",
+    "line": 4,
+    "column": 36
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassUseCase.js",
+    "functionName": "fulfilled",
+    "line": 5,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassUseCase.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassUseCase.js",
+    "functionName": "step",
+    "line": 7,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassUseCase.js",
+    "functionName": "(anonymous_8)",
+    "line": 18,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\PutUserPassUseCase.js",
+    "functionName": "(anonymous_9)",
+    "line": 19,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\SendEmailPassRecover.js",
+    "functionName": "(anonymous_0)",
+    "line": 2,
+    "column": 44
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\SendEmailPassRecover.js",
+    "functionName": "adopt",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\SendEmailPassRecover.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\SendEmailPassRecover.js",
+    "functionName": "(anonymous_3)",
+    "line": 4,
+    "column": 36
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\SendEmailPassRecover.js",
+    "functionName": "fulfilled",
+    "line": 5,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\SendEmailPassRecover.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\SendEmailPassRecover.js",
+    "functionName": "step",
+    "line": 7,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\SendEmailPassRecover.js",
+    "functionName": "(anonymous_8)",
+    "line": 18,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\SendEmailPassRecover.js",
+    "functionName": "(anonymous_9)",
+    "line": 19,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\ServicesSendMailWelcome.js",
+    "functionName": "(anonymous_0)",
+    "line": 2,
+    "column": 44
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\ServicesSendMailWelcome.js",
+    "functionName": "adopt",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\ServicesSendMailWelcome.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\ServicesSendMailWelcome.js",
+    "functionName": "(anonymous_3)",
+    "line": 4,
+    "column": 36
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\ServicesSendMailWelcome.js",
+    "functionName": "fulfilled",
+    "line": 5,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\ServicesSendMailWelcome.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\ServicesSendMailWelcome.js",
+    "functionName": "step",
+    "line": 7,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\ServicesSendMailWelcome.js",
+    "functionName": "(anonymous_8)",
+    "line": 17,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\application\\services\\ServicesSendMailWelcome.js",
+    "functionName": "(anonymous_9)",
+    "line": 18,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\domain\\User.js",
+    "functionName": "(anonymous_0)",
+    "line": 5,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_0)",
+    "line": 2,
+    "column": 44
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "adopt",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_3)",
+    "line": 4,
+    "column": 36
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "fulfilled",
+    "line": 5,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "step",
+    "line": 7,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "addOneMonth",
+    "line": 15,
+    "column": 9
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_8)",
+    "line": 21,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_9)",
+    "line": 22,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_10)",
+    "line": 46,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_11)",
+    "line": 47,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_12)",
+    "line": 54,
+    "column": 48
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_13)",
+    "line": 66,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_14)",
+    "line": 67,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_15)",
+    "line": 86,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_16)",
+    "line": 87,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_17)",
+    "line": 101,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_18)",
+    "line": 102,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_19)",
+    "line": 121,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\MysqlUserRepository.js",
+    "functionName": "(anonymous_20)",
+    "line": 122,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_0)",
+    "line": 2,
+    "column": 44
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "adopt",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_3)",
+    "line": 4,
+    "column": 36
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "fulfilled",
+    "line": 5,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "step",
+    "line": 7,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "verify",
+    "line": 18,
+    "column": 9
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_9)",
+    "line": 19,
+    "column": 43
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_10)",
+    "line": 40,
+    "column": 27
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_11)",
+    "line": 44,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_12)",
+    "line": 45,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_13)",
+    "line": 81,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_14)",
+    "line": 82,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_15)",
+    "line": 86,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\ServicesEmail.js",
+    "functionName": "(anonymous_16)",
+    "line": 87,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\controllers\\CreateUserController.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\controllers\\CreateUserController.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\controllers\\GetUserController.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\controllers\\PutUserPassController.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\controllers\\PutUserPassRecoverController.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\controllers\\RecoverPassController.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "(anonymous_0)",
+    "line": 2,
+    "column": 44
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "adopt",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "(anonymous_3)",
+    "line": 4,
+    "column": 36
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "fulfilled",
+    "line": 5,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "step",
+    "line": 7,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "(anonymous_7)",
+    "line": 15,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "(anonymous_8)",
+    "line": 16,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "(anonymous_9)",
+    "line": 21,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\helpers\\ServicesEncript.js",
+    "functionName": "(anonymous_10)",
+    "line": 22,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\validators\\Validationes.js",
+    "functionName": "(anonymous_2)",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\validators\\Validationes.js",
+    "functionName": "rejected",
+    "line": 6,
+    "column": 17
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\validators\\Validationes.js",
+    "functionName": "(anonymous_9)",
+    "line": 32,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\validators\\Validationes.js",
+    "functionName": "(anonymous_10)",
+    "line": 33,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\validators\\Validationes.js",
+    "functionName": "(anonymous_13)",
+    "line": 44,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\build\\src\\user\\infraestructure\\validators\\Validationes.js",
+    "functionName": "(anonymous_14)",
+    "line": 45,
+    "column": 47
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\database\\mysql.ts",
+    "functionName": "query",
+    "line": 19,
+    "column": 24
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\CreateUserUseCase.ts",
+    "functionName": "(anonymous_7)",
+    "line": 8,
+    "column": 2
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\CreateUserUseCase.ts",
+    "functionName": "(anonymous_8)",
+    "line": 15,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\GeTUserUseCase.ts",
+    "functionName": "(anonymous_7)",
+    "line": 6,
+    "column": 2
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\GeTUserUseCase.ts",
+    "functionName": "(anonymous_8)",
+    "line": 11,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\PutUserPassRecoverUseCase.ts",
+    "functionName": "(anonymous_7)",
+    "line": 5,
+    "column": 2
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\PutUserPassRecoverUseCase.ts",
+    "functionName": "(anonymous_8)",
+    "line": 9,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\PutUserPassUseCase.ts",
+    "functionName": "(anonymous_7)",
+    "line": 5,
+    "column": 2
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\PutUserPassUseCase.ts",
+    "functionName": "(anonymous_8)",
+    "line": 9,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\services\\SendEmailPassRecover.ts",
+    "functionName": "(anonymous_7)",
+    "line": 5,
+    "column": 2
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\services\\SendEmailPassRecover.ts",
+    "functionName": "(anonymous_8)",
+    "line": 10,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\application\\services\\ServicesSendMailWelcome.ts",
+    "functionName": "(anonymous_8)",
+    "line": 5,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\domain\\User.ts",
+    "functionName": "(anonymous_0)",
+    "line": 2,
+    "column": 4
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\MysqlUserRepository.ts",
+    "functionName": "addOneMonth",
+    "line": 5,
+    "column": 9
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\MysqlUserRepository.ts",
+    "functionName": "(anonymous_8)",
+    "line": 12,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\MysqlUserRepository.ts",
+    "functionName": "(anonymous_10)",
+    "line": 54,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\MysqlUserRepository.ts",
+    "functionName": "(anonymous_12)",
+    "line": 63,
+    "column": 10
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\MysqlUserRepository.ts",
+    "functionName": "(anonymous_13)",
+    "line": 83,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\MysqlUserRepository.ts",
+    "functionName": "(anonymous_15)",
+    "line": 99,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\MysqlUserRepository.ts",
+    "functionName": "(anonymous_17)",
+    "line": 111,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\MysqlUserRepository.ts",
+    "functionName": "(anonymous_19)",
+    "line": 131,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\ServicesEmail.ts",
+    "functionName": "verify",
+    "line": 15,
+    "column": 15
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\ServicesEmail.ts",
+    "functionName": "(anonymous_10)",
+    "line": 26,
+    "column": 27
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\ServicesEmail.ts",
+    "functionName": "(anonymous_11)",
+    "line": 31,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\ServicesEmail.ts",
+    "functionName": "(anonymous_13)",
+    "line": 58,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\ServicesEmail.ts",
+    "functionName": "(anonymous_15)",
+    "line": 61,
+    "column": 41
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\ServicesEmail.ts",
+    "functionName": "(anonymous_16)",
+    "line": 63,
+    "column": 38
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\ServicesEmail.ts",
+    "functionName": "(anonymous_17)",
+    "line": 78,
+    "column": 25
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\ServicesEmail.ts",
+    "functionName": "(anonymous_18)",
+    "line": 81,
+    "column": 24
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\ServicesEmail.ts",
+    "functionName": "(anonymous_19)",
+    "line": 85,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\helpers\\ServicesEncript.ts",
+    "functionName": "(anonymous_7)",
+    "line": 5,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\helpers\\ServicesEncript.ts",
+    "functionName": "(anonymous_9)",
+    "line": 10,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\helpers\\ServicesUuidv4.ts",
+    "functionName": "(anonymous_0)",
+    "line": 5,
+    "column": 2
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\validators\\Validationes.ts",
+    "functionName": "(anonymous_8)",
+    "line": 8,
+    "column": 16
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\validators\\Validationes.ts",
+    "functionName": "(anonymous_10)",
+    "line": 22,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\validators\\Validationes.ts",
+    "functionName": "(anonymous_12)",
+    "line": 27,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\validators\\Validationes.ts",
+    "functionName": "(anonymous_14)",
+    "line": 32,
+    "column": 8
+  },
+  {
+    "file": "C:\\Apis\\Api1-PIWEB\\src\\user\\infraestructure\\validators\\Validationes.ts",
+    "functionName": "(anonymous_16)",
+    "line": 42,
+    "column": 8
+  }
+]
